@@ -1,7 +1,15 @@
 class EventsController < ApplicationController
 
+  # include PgSearch::Model
+  # pg_search_scope :search_by_title_and_category,
+  #   against: [ :title, :category ],
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
+
+
   def index
-    @events = Event.all
+      @events = Event.all
   end
 
   def show
