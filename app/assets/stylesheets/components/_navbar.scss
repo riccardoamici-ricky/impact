@@ -8,5 +8,39 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 0px;
+}
+
+.navbar {
+  background: transparent;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-fullscreen {
+    min-height: 100vh;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    background: white;
+    width: 100%;
+    left: 0px;
+    background: #222222;
+}
+
+.navbar-toggler-z {
+  z-index: 101;
+  color: white;
+}
+
+.nav-list {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.nav-name {
+  color: white !important;
+  font-size: 20px;
 }

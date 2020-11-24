@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_24_135146) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,8 +71,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_135146) do
     t.integer "planet_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+
   end
 
   create_table "reviews", force: :cascade do |t|
