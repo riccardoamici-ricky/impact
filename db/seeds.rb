@@ -9,6 +9,14 @@ require "open-uri"
 
 Event.destroy_all
 User.destroy_all
+Category.destroy_all
+
+puts 'Creating categories'
+Category.create(name: 'Fashion')
+Category.create(name: 'Plants')
+Category.create(name: 'Food')
+Category.create(name: 'Interior')
+puts 'Habemus categories'
 
 puts 'creating user'
 
@@ -18,3 +26,4 @@ puts 'creating events'
 
 cleaning = Event.create!(title: "Cleaning Treptower Park", description: "There is so much trash", address: "Treptower Park", neighbourhood: "Treptower", category: "Sustainability", start_time: "7PM")
 feeding = Event.create!(title: "Feeding the homeless at Alex", description: "Soups for everyone", address: "Alexanderplatz", neighbourhood: "Mitte", category: "Charity", start_time: "7PM")
+
