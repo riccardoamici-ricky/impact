@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_162132) do
+ActiveRecord::Schema.define(version: 2020_11_24_135146) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -58,15 +65,16 @@ ActiveRecord::Schema.define(version: 2020_11_24_162132) do
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "category"
     t.string "location"
     t.string "url"
     t.integer "price_range"
     t.integer "planet_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
-    t.integer "price"
+
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -97,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_162132) do
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "products", "categories"
   add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
 end
