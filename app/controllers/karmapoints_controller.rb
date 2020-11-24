@@ -1,0 +1,2 @@
+class KarmapointsController < ApplicationController
+end
