@@ -1,0 +1,26 @@
+<div class="container Create">
+    <h1>EDIT YOUR EVENT</h1>
+
+    <%= simple_form_for @event do |f| %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :category %>
+      <%= f.input :address %>
+      <%= f.input :neighbourhood %>
+      <%= f.input :start_time %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "EDIT EVENT", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+     <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+          <% end %>
+
+    <br><br><br><br>
+</div>
+
+
