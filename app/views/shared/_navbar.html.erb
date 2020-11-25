@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse navbar-fullscreen" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto nav-list">
         <li class="nav-item">
-          <%= link_to "Marketplace", products_path, class: "nav-link nav-name" %>
+          <%= link_to "Marketplace", categories_path, class: "nav-link nav-name" %>
         </li>
         <li class="nav-item">
           <%= link_to "Make Your Impact", events_path, class: "nav-link nav-name" %>
@@ -23,9 +23,10 @@
         <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to new_user_session_path, class: "nav-link nav-name" do %>
-           Karmapoints<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>
+           Karmapoints <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>
            <% end %>
           <%= link_to "My Events", new_user_session_path, class: "nav-link nav-name" %>
+          <%= link_to "My Profile", new_user_session_path, class: "nav-link nav-name" %>
         <% end %>
         </li>
         <li class="nav-item">
