@@ -32,15 +32,50 @@
 
 .navbar-toggler-z {
   z-index: 101;
-  color: white;
+  // color: #222222 !important;
+  margin-top: 10px;
+  font-size: 30px !important;
+  color: white !important;
+}
+
+.collapsed {
+  color: #222222 !important;
 }
 
 .nav-list {
   margin-left: 2rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  font-family: "montserrat";
 }
 
 .nav-name {
   color: white !important;
   font-size: 20px;
+  padding: 0px;
+  margin-bottom: 3px;
+
+}
+
+.nav-name-sec {
+  color: white !important;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 100px;
+  letter-spacing: 3px;
+  margin-bottom: 0px;
+}
+
+.nav-name-sec:after {
+    content: "";
+    display: block;
+    width: 50%;
+    padding-top: 10px;
+    border-bottom: 1px solid white;
+}
+.nav-item {
+  color: white;
+}
+
+.button:focus {
+  outline: none;
 }
