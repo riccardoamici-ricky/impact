@@ -1,38 +1,41 @@
-<div class="container">
+<div class="event-container">
 
-  <div class="searchbar">
-    <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an event"
-      %>
 
-    <% end %>
-  </div>
+  <div class="card-event">
 
-  <div class="title">
-    <h1 class="main-title"><%= @event.title %></h1>
-  </div>
-
-  <div class="photo">
-    <div class="event-photo"><img src="https://source.unsplash.com/random">
-  </div>
-
-  <div class="description">
-    <p class="event-description"><%= @event.description %></p>
-  </div>
-
-  <div class="facts and map">
-    <div class="facts">
-    <p class="event-facts"> "some facts here"</p>
+    <div class="title">
+      <h4 class="main-title"><%= @event.title %></h4>
     </div>
-    <div class="map">
-    </div>
-  </div>
 
-  <div class="button">
-    <%= link_to "Join", "#", class: "btn btn-ghost" %>
+    <div class="photo">
+      <div class="event-photo"><img src="https://source.unsplash.com/random">
+    </div>
+
+    <div class="date">
+      <p class="event-date"><%= (@event.start_time).to_s(:short) %></p>
+      <p class="event-neighbourhood"> <%= @event.neighbourhood %></p>
+    </div>
+
+    <div class="description">
+      <p class="event-description"><%= @event.description %></p>
+    </div>
+
+    <div class="facts-and-map">
+      <div class="facts">
+      <p class="event-facts"> Facts</p>
+      <p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Neque perspiciatis ex sunt animi blanditiis debitis a</p>
+      </div>
+      <div class="map">
+
+      </div>
+    </div>
+
+  </div>
+    <div class="foot">
+      <div class="button">
+        <%= link_to "Join", "#", class: "join" %>
+      </div>
+    </div>
   </div>
 
 
