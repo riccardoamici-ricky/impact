@@ -7,6 +7,15 @@
     <% @posts.each do |post| %>
       <div class="post">
        <h1><%= link_to post.title.upcase, post_path(post) %></h1>
+       <%= post.content %>
+       <ul>
+         <% post.comments.each do |comment| %>
+           <li>
+             <%= comment.content %>
+           </li>
+         <% end %>
+       </ul>
+       <%= link_to "Comment", new_post_comment_path(post) %>
       </div>
     <% end %>
   </div>
