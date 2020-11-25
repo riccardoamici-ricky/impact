@@ -1,14 +1,15 @@
 
 <div class="container">
 
-  <%= form_tag events_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an event"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <div class="searchbar">
+    <%= form_tag events_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an event"
+      %>
+    <% end %>
+  </div>
 
   <div class="row">
     <h2> Events in your city... </h2>
