@@ -2,9 +2,7 @@
 
   <% @categories.each do |category| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <%= link_to category.name.upcase, categories_show_path(category) %>
-
-
+    <%= link_to category.name.upcase, category_path(category) %>
   </div>
   <% end %>
 </div>
