@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_11_25_164130) do
+=======
+ActiveRecord::Schema.define(version: 2020_11_25_173520) do
+>>>>>>> master
 =======
 ActiveRecord::Schema.define(version: 2020_11_25_173520) do
 >>>>>>> master
@@ -52,7 +56,13 @@ ActiveRecord::Schema.define(version: 2020_11_25_173520) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.index ["post_id"], name: "index_comments_on_post_id"
+=======
+    t.bigint "user_id", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+>>>>>>> master
 =======
     t.bigint "user_id", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -140,7 +150,13 @@ ActiveRecord::Schema.define(version: 2020_11_25_173520) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   add_foreign_key "comments", "posts"
+=======
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+>>>>>>> master
 =======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
