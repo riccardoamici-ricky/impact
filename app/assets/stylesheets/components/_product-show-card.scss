@@ -4,16 +4,96 @@
 }
 
 .title {
-  // margin-left: 20px;
   font-family: "montserrat";
 }
 
 
 .small {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: $marketplace;
+  padding: 20px 30px !important;
+  margin-top: 40px;
 }
 
 .desc {
   margin-top: 20px;
+  font-family: "montserrat";
+  text-align: justify;
+}
+
+.show-card {
+  margin-top: 20px;
+  border-top: 0.5px solid black;
+  h2 {
+    margin-top: 10px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.desc-title {
+  font-weight: 600;
+  padding-right: 15px;
+  font-size: 14px;
+  color: #222222;
+  font-family: "montserrat";
+  border-right: 1px solid #222222;
+
+}
+.desc-content {
+    font-size: 14px;
+    color: #222222;
+    font-family: "montserrat";
+    padding-left: 15px;
+}
+
+
+
+// searchbar
+.search-form-control {
+  position: relative;
+}
+
+// .search-form-control .btn {
+//   position: absolute;
+//   top: 8px;
+//   bottom: 8px;
+//   right: 8px;
+// }
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.search-form-control .form-control:focus {
+  outline: none !important;
+}
+
+.form-control {
+  background: #222222;
+  border-radius: 30px;
+  color: white;
+  padding: 0.375rem 1.75rem;
+  margin-top: 20px;
+  font-family: "montserrat";
+  font-weight: 400;
+
+}
+
+.input ::placeholder {
+  color: white;
+}
+
+.form-control:focus {
+  border-color: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  background-color: #222222;
+  font-family: "montserrat";
+    font-weight: 400;
+
 }
