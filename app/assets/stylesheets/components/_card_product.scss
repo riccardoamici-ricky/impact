@@ -1,0 +1,46 @@
+.card-product > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-product {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: 350px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .card-product h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    margin: 5px;
+  }
+
+  .card-product .product-description {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  .card-display {
+      display: inline-flex;
+  }
+
+  .btn {
+      background-color: black;
+      color: white;
+      border-radius: 4px;
+      margin: 5px 0px 10px;
+      width: 150px;
+  }
