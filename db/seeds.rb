@@ -2,6 +2,19 @@
 require 'open-uri'
 require 'nokogiri'
 
+
+Event.destroy_all
+User.destroy_all
+Category.destroy_all
+Product.delete_all
+
+puts 'Creating categories'
+Category.create(name: 'Fashion')
+Category.create(name: 'Plants')
+Category.create(name: 'Food')
+Category.create(name: 'Interior')
+puts 'Habemus categories'
+
 url = "https://bosqueplants.com/en/plants"
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
@@ -14,17 +27,6 @@ html_doc.search(".product").each_with_index do |box, index|
   puts "Created product #{index + 1}"
 end
   puts "Finish creating products"
-
-Event.destroy_all
-User.destroy_all
-Category.destroy_all
-
-puts 'Creating categories'
-Category.create(name: 'Fashion')
-Category.create(name: 'Plants')
-Category.create(name: 'Food')
-Category.create(name: 'Interior')
-puts 'Habemus categories'
 
 puts 'creating user'
 
