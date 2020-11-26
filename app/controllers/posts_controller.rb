@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @comment = Comment.new
   end
 
   def new
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to @post, notice: 'post was successfully created.'
+      redirect_to posts_path, notice: 'post was successfully created.'
     else
       render :new
     end
