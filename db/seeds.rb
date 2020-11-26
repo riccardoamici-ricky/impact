@@ -16,8 +16,10 @@ end
   puts "Finish creating products"
 
 Event.destroy_all
-User.destroy_all
 Category.destroy_all
+Post.destroy_all
+User.destroy_all
+Comment.destroy_all
 
 puts 'Creating categories'
 Category.create(name: 'Fashion')
@@ -28,11 +30,15 @@ puts 'Habemus categories'
 
 puts 'creating user'
 
-laura = User.create(email: 'laura@gmail.com', password: '123456')
+ricky = User.create(email: 'amici95@gmail.com', password: '123456', username: "ricky13")
 
 puts 'creating events'
 
 cleaning = Event.create!(title: "Cleaning Treptower Park", description: "There is so much trash", address: "Treptower Park", neighbourhood: "Treptower", category: "Sustainability", start_time: "7PM")
 feeding = Event.create!(title: "Feeding the homeless at Alex", description: "Soups for everyone", address: "Alexanderplatz", neighbourhood: "Mitte", category: "Charity", start_time: "7PM")
 
+puts 'creating posts'
+
+Post.create(title: "How to bake a veggie cake", user:User.last)
+Comment.create(content:"Nice!", post:Post.first, user:User.last)
 

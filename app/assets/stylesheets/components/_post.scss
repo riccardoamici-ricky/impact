@@ -1,0 +1,33 @@
+.post{
+  background-color: $soft-gray;
+  border: 1px solid $very-light-gray;
+  border-bottom: 15px solid $light-orange;
+  margin-top: 20px !important;
+  padding: 20px;
+  margin: auto;
+}
+.title-post{
+  background-color: $rosee;
+  text-align: center;
+  border: 1px solid $very-light-gray;
+  a{
+    color: $orange;
+    font-weight: bold;
+  }
+}
+.post-content{
+  border: 1px solid $very-light-gray;
+  margin-top: 15px;
+  padding: 10px;
+}
+.comments{
+  background-color: $soft-gray;
+  border: 1px solid $very-light-gray;
+  padding: 10px;
+  li{
+    list-style: none;
+  }
+}
+.username{
+
+}
