@@ -21,6 +21,7 @@ html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 html_doc.search(".product").each_with_index do |box, index|
   title =  box.search('h5').text
+
   url_title = title.downcase.gsub(" ", "")
   url = "https://bosqueplants.com/en/plants/#{url_title}"
   # p url_title
