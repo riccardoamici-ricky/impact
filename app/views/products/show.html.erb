@@ -1,12 +1,39 @@
 <div class="container content">
-  <h2 class="title"><%= @product.title.upcase %></h2>
-  <div class="image">
-    <%= image_tag( @product.image, :alt => "rss feed") %>
-  </div>
-  <p class="desc"> <%= @product.description %></p>
+  <div class="show-card">
+    <div class="search-form-control form-group">
+        <%= form_tag category_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for products ..."%>
+      </div>
+    <% end %>
+    <h2 class="title"><%= @product.title.upcase %></h2>
+    <div class="image">
+      <%= image_tag( @product.image, :alt => "rss feed") %>
+    </div>
+    <p class="desc"> <%= @product.description %></p>
+  <table>
+    <tbody>
+      <tr>
+        <td class="desc-title">Our Rating</td>
+        <td class="desc-content"><i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i></td>
+      </tr>
+      <tr>
+        <td class="desc-title">Location</td>
+        <td class="desc-content">Berlin, Germany</td>
+      </tr>
+      <tr>
+        <td class="desc-title">Where To Buy</td>
+        <td class="desc-content">www.bosqueplants.com</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <%= link_to "Use your karmapoints", "#", class: "btn btn-flat small" %>
-  <%= link_to "Go To Webshop", "#", class: "btn btn-flat small" %>
+
+
+    <%= link_to "GO TO WEBSHOP", @product.url, class: "btn btn-flat small" %>
+  </div>
 
 
 
