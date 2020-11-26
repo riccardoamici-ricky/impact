@@ -1,41 +1,34 @@
 
-<div class="container">
+<div class="container-events">
 
-  <div class="searchbar">
-    <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an event"
-      %>
-    <% end %>
-  </div>
 
-  <div class="row">
-    <h2> Events in your city... </h2>
-  </div>
+
+  <h2> Events in your city... <%= link_to new_event_path, method: :get do %>
+      <i class="fas fa-plus" id="linkawesome"></i>
+          <% end %> </h2>
+
+
 
     <div class="index">
      <% @events.each do |event| %>
-
-      <div class="row">
-          <div class="card mb-3" style="width: 331px; height: 271px">
-            <div class="neighborhood" m-2>
-              <h5 class="text-right"><i class="fas fa-location-arrow"></i><%= event.neighbourhood %></h5>
-            </div>
-            <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-            <div class="card-body">
-              <div class= "d-flex-justify-content-between">
-                <h5 class="card-title"><%= event.title %></h5>
-                <h5 class="event-date"><%= (event.start_time).to_s(:short) %></h5>
-              </div>
-
-              <p class="text-left"><%= event.description %></p>
-            </div>
+      <div class="card-trip">
+          <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, crop: :fill %>
+          <% end %>
+          <div class="card-trip-pricing">
+            <h2 class="main-title"><%= link_to event.title, event_path(event)%></h2>
+            <p><%=event.category%></p>
+            <p><%=event.description%></p>
           </div>
-      </div>
+          <h3 class="card-trip-info"><div id="date"><%= (event.start_time).to_s(:short) %></div><div id="neighbourhood"><%= event.neighbourhood %></div></h3>
+        </div>
 
     <% end %>
   </div>
 
 </div>
+
+
+
+
+

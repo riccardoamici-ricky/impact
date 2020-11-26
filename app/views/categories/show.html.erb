@@ -1,3 +1,21 @@
 <div class="container">
-  <h3>Top products for <%= @category.name %></h3>
+  <h3>Top choices for <%= @category.name %></h3>
+  
+  <div class="card-container">
+   <div class="row">
+    <% @products.each do |product| %>
+        <div class="col-6 p-0">
+        <div class="card-product m-1">
+          <img src= <%= product.image %> >
+          <div class="card-header d-flex justify-content-between"> 
+            <h5 class="header"> <%= product.title %> </h5>
+            <h5 class="card-pricing"> <%= product.price %> € </h5>
+          </div>
+          <p class="card-description"><%= product.description[0...50] %>...</p>
+          <%= link_to "Show", products_path(product), class: "btn ml-3" %>
+        </div>
+      </div>
+       <% end %>
+    </div>
+  </div>
 </div>

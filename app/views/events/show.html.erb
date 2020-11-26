@@ -4,11 +4,21 @@
   <div class="card-event">
 
     <div class="title">
-      <h4 class="main-title"><%= @event.title %></h4>
+      <h4 class="main-title"><%= @event.title %>
+
+        <div class="trash"><%= link_to edit_event_path(@event[:id]), method: :get do %>
+              <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+          <% end %></div></h4>
+
     </div>
 
+
+
     <div class="photo">
-      <div class="event-photo"><img src="https://source.unsplash.com/random">
+      <div class="event-photo"><%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
 
     <div class="date">
@@ -23,7 +33,7 @@
     <div class="facts-and-map">
       <div class="facts">
       <p class="event-facts"> Facts</p>
-      <p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Neque perspiciatis ex sunt animi blanditiis debitis a</p>
+      <p>When you help others, you give off positive vibes, which can rub off on your peers and improve your friendships!</p>
       </div>
       <div class="map">
 
@@ -33,7 +43,7 @@
   </div>
     <div class="foot">
       <div class="button">
-        <%= link_to "Join", "#", class: "join" %>
+        <%= link_to "Join", "/events", notice: 'join_event', class: "join", notice: 'join_event'%>
       </div>
     </div>
   </div>
