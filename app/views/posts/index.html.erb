@@ -6,9 +6,32 @@
   <div class="posts">
     <% @posts.each do |post| %>
       <div class="post">
-       <h1><%= link_to post.title.upcase, post_path(post) %></h1>
+        <div class="title-post">
+          <%= link_to post.title.upcase, post_path(post) %>
+        </div>
+        <div class="post-content">
+          <%= post.content %>
+        </div>
+      </div>
+      <div class="comments">
+          <ul>
+            <% post.comments.each do |comment| %>
+              <li style="background-color: #F4F4F4; margin-top: 5px">
+                <% if comment.user.photo.attached? %>
+                  <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar" %>
+                <% end %>
+                <%= comment.user.username %>
+                <%= comment.content %>
+              </li>
+            <% end %>
+          </ul>
+           <%= simple_form_for [ post, @comment ], remote: true do |f| %>
+           <%= f.input :content %>
+           <%= f.submit "Comment", class: "btn btn-primary" %>
+           <% end %>
       </div>
     <% end %>
   </div>
+
   <%= link_to 'NEW', new_post_path, class: "btn-landing" %>
 </div>

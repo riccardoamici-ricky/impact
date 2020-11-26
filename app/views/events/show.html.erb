@@ -1,23 +1,54 @@
-<h1> Show page </h1>
+<div class="event-container">
 
-<div class="container">
-  <h4><%= @event.title %></h4>
-  <h4><%= @event.description %></h4>
-  <h4><%= @event.category %></h4>
-  <h4><%= @event.address %></h4>
-  <h4><%= @event.neighbourhood %></h4>
-  <h4><%= @event.start_time %></h4>
 
-  <div class="anchor-link">
-    <%= link_to '/events' do %>
-    <p><i class="fas fa-arrow-left"></i> Back to events </p>
-    <% end %>
+  <div class="card-event">
+
+    <div class="title">
+      <h4 class="main-title"><%= @event.title %></h4>
+
+        <%= link_to edit_event_path(@event[:id]), method: :get do %>
+              <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+          <% end %>
+
+    </div>
+
+
+
+    <div class="photo">
+      <div class="event-photo"><img src="https://source.unsplash.com/random">
+    </div>
+
+    <div class="date">
+      <p class="event-date"><%= (@event.start_time).to_s(:short) %></p>
+      <p class="event-neighbourhood"> <%= @event.neighbourhood %></p>
+    </div>
+
+    <div class="description">
+      <p class="event-description"><%= @event.description %></p>
+    </div>
+
+    <div class="facts-and-map">
+      <div class="facts">
+      <p class="event-facts"> Facts</p>
+      <p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Neque perspiciatis ex sunt animi blanditiis debitis a</p>
+      </div>
+      <div class="map">
+
+      </div>
+    </div>
+
+  </div>
+    <div class="foot">
+      <div class="button">
+        <%= link_to "Join", "/events", notice: 'join_event', class: "join", notice: 'join_event'%>
+      </div>
+    </div>
   </div>
 
-  <div class="delete-link">
-    <%= link_to "Delete #{@event.title}",
-            event_path(@event),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-  </div>
+
 </div>
+
+

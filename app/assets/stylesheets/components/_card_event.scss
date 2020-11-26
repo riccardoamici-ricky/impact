@@ -1,0 +1,123 @@
+
+.event-container {
+  width: 100%;
+}
+.card-event {
+  margin: 8px;
+
+}
+
+.title a {
+  color: black;
+
+}
+
+.main-title {
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.event-photo > img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photo {
+  width: 100%;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.event-date {
+
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+
+}
+
+.event-neighbourhood {
+
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+
+}
+
+.event-description {
+  margin-top: 8px;
+  height: 90px;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.facts {
+  width: 50%;
+  margin-right: 3px;
+}
+
+
+
+.facts-and-map {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 12px;
+
+}
+
+.map {
+  width: 50%;
+  margin-left: 3px;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.event-facts {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+
+
+  text-decoration-line: underline;
+
+  color: #222323;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin-top: 80px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background: #598392;
+  border-radius: 5px;
+}
+
+.button a {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: 0.15em;
+  margin-top: 8px;
+}
+

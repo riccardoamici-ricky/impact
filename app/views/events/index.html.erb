@@ -1,22 +1,16 @@
 
 <div class="container">
 
-  <%= form_tag events_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an event"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 
   <div class="row">
     <h2> Events in your city... </h2>
   </div>
 
+  <%= link_to new_event_path, method: :get do %>
+              <i class="fas fa-plus"></i>
+          <% end %>
     <div class="index">
      <% @events.each do |event| %>
-
       <div class="row">
           <div class="card mb-3" style="width: 331px; height: 271px">
             <div class="neighborhood" m-2>
@@ -25,7 +19,7 @@
             <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
             <div class="card-body">
               <div class= "d-flex-justify-content-between">
-                <h5 class="card-title"><%= event.title %></h5>
+                <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
                 <h5 class="event-date"><%= (event.start_time).to_s(:short) %></h5>
               </div>
 

@@ -1,30 +1,51 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "", class: "navbar-brand" %>
 
-  <button class="navbar-toggler navbar-toggler-z" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-toggle-off"></i>
+  <button class="navbar-toggler navbar-toggler-z collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
   </button>
 
 
   <div class="collapse navbar-collapse navbar-fullscreen" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto nav-list">
         <li class="nav-item">
-          <%= link_to "Marketplace", "#", class: "nav-link nav-name" %>
+          <%= link_to "Marketplace", categories_path, class: "nav-link nav-name" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Make An Impact", "#", class: "nav-link nav-name" %>
+          <%= link_to "Make Your Impact", events_path, class: "nav-link nav-name" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Get Insprired", "#", class: "nav-link nav-name" %>
+          <%= link_to "Get Inspired", "/posts", class: "nav-link nav-name" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link nav-name" %>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link nav-name">ACCOUNT</p>
+          <p class="nav-link nav-name-sec">ACCOUNT</p>
         </li>
         <% if user_signed_in? %>
-      <% end %>
+        <li class="nav-item">
+          <%= link_to new_user_session_path, class: "nav-link nav-name" do %>
+           Karmapoints <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>
+           <% end %>
+          <%= link_to "My Events", new_user_session_path, class: "nav-link nav-name" %>
+          <%= link_to "My Profile", new_user_session_path, class: "nav-link nav-name" %>
+
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link nav-name" %>
+        </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link nav-name" %>
+          </li>
+        <% end %>
+        <li class="nav-item">
+          <p class="nav-link nav-name-sec">ABOUT US</p>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Our philosophy", "#", class: "nav-link nav-name" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Top stories", "#", class: "nav-link nav-name" %>
+        </li>
     </ul>
   </div>
 </div>

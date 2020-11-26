@@ -1,11 +1,34 @@
-<% if notice %>
-  <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
-    <%= notice %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+
+<% if notice && notice == 'join_event' %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Thank you for joining!</strong> By making this Impact you will earn 10 <a href="/karmapoints" class="alert-link">KARMAPOINTS</a>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
 <% end %>
+
+<% if notice && notice == 'destroy_event' %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>You have cancelled your event!</strong> We will take care of informing the participants.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
+
+<% if notice && notice == 'create_event' %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>You will host this event!</strong> Thank you for making an <strong>Impact</strong> !
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
+
+<% if notice && notice == 'update_event' %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>You have updated the event!</strong> We will take care of informing the participants.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
+
+
+
 <% if alert %>
   <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
     <%= alert %>
