@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
   end
 
   def new
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
     # @event.user = @user
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event, notice: 'Your event is online!'
+      redirect_to @event, notice: 'create_event'
     else
       render :new
     end
@@ -45,13 +46,13 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    redirect_to root_path, notice: 'Your event has been updated'
+    redirect_to @event, notice: 'update_event'
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to root_path, notice: 'You have deleted your event'
+    redirect_to @event, notice: 'destroy_event'
   end
 
   private
