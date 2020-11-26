@@ -8,11 +8,10 @@
             placeholder: "Search for products ..."%>
       </div>
     <% end %>
-
+</div>
   <% @categories.each do |category| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="card-category" style=" margin-left: 0px; margin-right: -; margin-right: 0px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <%= link_to category.name.upcase, category_path(category) %>
     </div>
-  <% end %>
+    <% end %>
   </div>
-</div>

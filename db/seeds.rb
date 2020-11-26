@@ -35,8 +35,6 @@ html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 html_doc.search(".product").each_with_index do |box, index|
   title =  box.search('h5').text
-<<<<<<< HEAD
-<<<<<<< HEAD
   desc =  box.search('p').text
   price =  box.search('.price').text.strip
   img = box.search('img').attribute('src').value
