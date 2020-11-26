@@ -63,10 +63,10 @@ laura = User.create(email: 'laura@gmail.com', password: '123456')
   description_watering = six_tr.search("td:nth-child(2)").text
   # p description.text
   # p description_watering.text
-  desc =  "#{box.search('p').text} #{description} #{description_watering}"
+  desc =  "#{box.search('p').text}. #{description} #{description_watering}"
   price =  box.search('.price').text.strip
   img = box.search('img').attribute('src').value
-  Product.create!(title: title, description: desc, price: price, image: img, category: Category.all.sample)
+  Product.create!(title: title, description: desc, price: price, url: url, image: img, category: Category.all.sample)
   puts "Created product #{index + 1}"
 end
 puts "Congrats you now have #{Product.count} products."
