@@ -4,8 +4,10 @@ require 'nokogiri'
 
 Product.delete_all
 Event.destroy_all
-# User.destroy_all
 Category.destroy_all
+Post.destroy_all
+User.destroy_all
+Comment.destroy_all
 
 puts 'Creating categories'
 Category.create(name: 'Fashion')
@@ -39,14 +41,7 @@ end
 puts "Congrats you now have #{Product.count} products."
 puts "Finish creating products"
 
-
-
-puts 'creating user'
-laura = User.create(email: 'laura@gmail.com', password: '123456')
-
 puts 'creating events'
 
 cleaning = Event.create!(title: "Cleaning Treptower Park", description: "There is so much trash", address: "Treptower Park", neighbourhood: "Treptower", category: "Sustainability", start_time: "7PM")
 feeding = Event.create!(title: "Feeding the homeless at Alex", description: "bla bla bla bla", address: "Alexanderplatz", neighbourhood: "Mitte", category: "Charity", start_time: "7PM")
-
-
