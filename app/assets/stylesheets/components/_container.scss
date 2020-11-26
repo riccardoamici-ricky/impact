@@ -1,0 +1,48 @@
+.container-events {
+  width: 100%;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  font-family: "montserrat";
+    a {
+  color: black;
+  }
+
+}
+
+.container-events h2 {
+  font-family: "montserrat";
+  font-size: 15px;
+  color: black;
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+
+
+#linkawesome {
+  color: $gray;
+  font-size: 18px;
+  margin-left: 160px;
+}
+
+.trash {
+  font-size: 16px;
+  margin-left: 305px;
+}
+
+.event-container {
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 8px;
+  font-family: "montserrat";
+}
