@@ -41,13 +41,13 @@ html_doc.search(".product").each_with_index do |box, index|
   img = box.search('img').attribute('src').value
   Product.create!(title: title, description: desc, price: price, url: url, image: img, category: Category.all.sample)
   puts "Created product #{index + 1}"
-end
+
+  end
   puts "Congrats you now have #{Product.count} products."
   puts "Finish creating products"
 
 
 puts 'creating users'
-
 laura = User.create(email: 'laura@impact.com', password: '123456', username: 'footer20')
 
 puts 'creating events'

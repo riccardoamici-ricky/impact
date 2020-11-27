@@ -8,7 +8,10 @@
             placeholder: "Search for products ..."%>
       </div>
     <% end %>
-    <h2 class="title"><%= @product.title.upcase %></h2>
+    <div class="title-price">
+      <h2 class="title"><%= @product.title.upcase %></h2>
+      <h4><%= @product.price %> €</h4>
+    </div>
     <div class="image">
       <%= image_tag( @product.image, :alt => "rss feed") %>
     </div>
@@ -38,7 +41,11 @@
       <% end %>
     </div>
     <div>
-      <%= link_to "GO TO WEBSHOP", @product.url, class: "btn btn-flat small" %>
+
+      <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert", data: {
+       url: @product.url,
+       buy_path: request.protocol + request.host + (request.host_with_port if Rails.env.development?) + buy_path
+      } %>
     </div>
     <br>
     <div class="socialmedia">

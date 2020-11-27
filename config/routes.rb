@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "/profile", to: "pages#profile"
   get "/howwerate", to: "pages#rating"
+  get "/buy", to: "products#buy", as: :buy
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
