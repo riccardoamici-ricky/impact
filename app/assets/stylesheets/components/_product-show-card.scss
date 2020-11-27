@@ -1,6 +1,7 @@
 .image img {
   width: 100%;
   border-radius: 5px;
+  height: 300px;
 }
 
 .title {
@@ -13,6 +14,7 @@
   font-weight: 600;
   background-color: $marketplace;
   padding: 20px 30px !important;
+
   margin-top: 40px;
   text-align: center;
 }
@@ -25,9 +27,10 @@
 
 .show-card {
   margin-top: 20px;
-  border-top: 0.5px solid black;
+  border-top: 1px solid $marketplace;
   h2 {
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 1.5rem;
   }
   p {
     font-size: 14px;
@@ -94,6 +97,7 @@
   margin-top: 20px;
   font-family: "montserrat";
   font-weight: 400;
+  opacity: 0.6;
 
 }
 
@@ -108,7 +112,7 @@
   color: white;
   background-color: #222222;
   font-family: "montserrat";
-    font-weight: 400;
+  font-weight: 400;
 
 }
 

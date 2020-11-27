@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+  def index
+    @comments = Comment.all
+  end
+
   def new
     @comment = Comment.new
     @post = Post.find(params[:post_id])
@@ -11,10 +16,21 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @comment.user = current_user
     if @comment.save
-      redirect_to posts_path, notice: 'comment was successfully created.'
+      redirect_to posts_path
     else
       render :new
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    # @post = Post.find(params[:post_id])
+    @comment.destroy
+    redirect_to posts_path
   end
 
   private
