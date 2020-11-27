@@ -1,5 +1,5 @@
 .card-product > img {
-    height: 200px;
+    height: 180px;
     width: 100%;
     object-fit: cover;
   }
@@ -8,7 +8,7 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    height: 350px;
+    height: 325px;
     margin-bottom: 20px;
     border-radius: 5px;
     
@@ -44,21 +44,20 @@
       background-color: $marketplace;
       color: white;
       border-radius: 4px;
-      margin: 5px 5px 10px;
       width: 250px;
       font-family: "montserrat";
       font-weight: 500;
       letter-spacing: 4px;
       padding: 8px 10px !important;
-      margin-top: 40px;
-      font-size: 12px;
-    
+      font-size: 13px;
+      margin-left: 47px;
     }
 
-  .h5 {
+  .h3 {
     font-family: "montserrat";
   }
 
-  .h3 {
+  .card-header {
+    padding: 0.3rem;
     font-family: "montserrat";
   }
