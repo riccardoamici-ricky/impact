@@ -1,23 +1,32 @@
 .comments{
   background-color: $soft-gray;
   border: 1px solid $very-light-gray;
+  border-radius: 5px;
   padding: 10px;
+  padding-bottom: 20px;
   li{
     list-style: none;
   }
 }
 .username{
-
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: bold;
 }
 .comment{
   display: flex;
 }
-.trash-bin-hidden{
-  visibility: visible;
-}
-.trash-bin{
+.hidden{
   visibility: hidden;
 }
+// .trash-bin{
+//   visibility: visible;
+// }
 .fa-trash{
   color: $light-orange;
+  padding-left: 10px;
 }
+.avatar-comment{
+  margin-bottom: 5px;
+}
+

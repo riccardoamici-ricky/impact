@@ -35,11 +35,22 @@
 .btn-low {
   background: #AEC3B0;
 }
-
+.btn-girl {
+  background: #FFC0CB;
+}
 .event {
   font-size: 15px;
   font-weight: 600;
   background-color: $impact;
   padding: 20px 30px !important;
   margin-top: 12px;
+}
+.btn-comment {
+  background-color: $soft-gray;
+  font-weight: bold;
+  color: $light-orange;
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 2px solid;
+  border-color: $light-orange;
 }
