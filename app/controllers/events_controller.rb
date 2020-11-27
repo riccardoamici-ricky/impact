@@ -6,7 +6,9 @@ class EventsController < ApplicationController
   #   using: {
   #     tsearch: { prefix: true }
   #   }
-
+  def my_events
+    @events = current_user.events
+  end
 
   def index
     if params[:query].present?
@@ -27,9 +29,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    # @user = current_user
-    # @event.user = @user
+
     @event = Event.new(event_params)
+    @event.user = current_user
     if @event.save
       redirect_to @event, notice: 'create_event'
     else

@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_11_25_164130) do
-=======
-ActiveRecord::Schema.define(version: 2020_11_25_173520) do
->>>>>>> master
-=======
-ActiveRecord::Schema.define(version: 2020_11_25_173520) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 2020_11_27_144420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,19 +47,9 @@ ActiveRecord::Schema.define(version: 2020_11_25_173520) do
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-<<<<<<< HEAD
-    t.index ["post_id"], name: "index_comments_on_post_id"
-=======
     t.bigint "user_id", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
->>>>>>> master
-=======
-    t.bigint "user_id", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
->>>>>>> master
   end
 
   create_table "events", force: :cascade do |t|
@@ -79,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_173520) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "neighbourhood"
     t.string "category"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "karmapoints", force: :cascade do |t|
@@ -149,19 +133,9 @@ ActiveRecord::Schema.define(version: 2020_11_25_173520) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  add_foreign_key "comments", "posts"
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
->>>>>>> master
-=======
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users"
->>>>>>> master
   add_foreign_key "karmapoints", "users"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"

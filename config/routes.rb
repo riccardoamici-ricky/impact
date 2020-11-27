@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :events
+  get "my_events", to: "events#my_events"
   resources :categories, only: [:index, :show]
 
   get "/profile", to: "pages#profile"
