@@ -5,18 +5,22 @@
   margin-top: 20px !important;
   padding: 20px;
   margin: auto;
+  border-radius: 5px;
 }
 .title-post{
-  background-color: $rosee;
+  font-size: 19px;
+  // background-color: $rosee;
   text-align: center;
-  border: 1px solid $very-light-gray;
-  a{
-    color: $orange;
-    font-weight: bold;
-  }
+  // border: 1px solid $very-light-gray;
+  // a{
+  //   color: $orange;
+  //   font-weight: bold;
+  // }
 }
 .post-content{
-  border: 1px solid $very-light-gray;
+  border-top: 1px solid $very-light-gray;
+  border-bottom: 1px solid $very-light-gray;
   margin-top: 15px;
   padding: 10px;
+  border-radius: 5px;
 }
