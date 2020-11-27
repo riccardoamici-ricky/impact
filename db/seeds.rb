@@ -4,15 +4,10 @@ require 'nokogiri'
 
 
 Event.destroy_all
-User.destroy_all
-Category.destroy_all
-Product.delete_all
-
-Product.delete_all
-Event.destroy_all
-Category.destroy_all
 Post.destroy_all
 User.destroy_all
+Product.delete_all
+Category.destroy_all
 Comment.destroy_all
 
 
@@ -29,16 +24,6 @@ html_doc = Nokogiri::HTML(html_file)
 html_doc.search(".product").each_with_index do |box, index|
   title =  box.search('h5').text
   desc =  box.search('p').text
-  price =  box.search('.price').text.strip
-  img = box.search('img').attribute('src').value
-  Product.create(title: title, description: desc, price: price, image: img)
-  puts "Created product #{index + 1}"
-end
-  puts "Finish creating products"
-
-puts 'creating user'
-
-laura = User.create(email: 'laura@gmail.com', password: '123456')
 
   url_title = title.downcase.gsub(" ", "")
   url = "https://bosqueplants.com/en/plants/#{url_title}"
@@ -57,14 +42,13 @@ laura = User.create(email: 'laura@gmail.com', password: '123456')
   Product.create!(title: title, description: desc, price: price, url: url, image: img, category: Category.all.sample)
   puts "Created product #{index + 1}"
 end
-puts "Congrats you now have #{Product.count} products."
-puts "Finish creating products"
+  puts "Congrats you now have #{Product.count} products."
+  puts "Finish creating products"
 
 
 puts 'creating users'
 
 laura = User.create(email: 'laura@impact.com', password: '123456', username: 'footer20')
-
 
 puts 'creating events'
 file4 = URI.open('https://res.cloudinary.com/dsij1zq1l/image/upload/v1606408223/Impact%20events/pexels-suzy-hazelwood-1855203_faqkym.jpg')
