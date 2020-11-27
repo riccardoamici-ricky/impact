@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-profile">
     <h2><%= current_user.username %>'s<br>Profile</h2>
-    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-bordered profile-avatar" %>
+    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "profile-avatar" %>
     <h4>Hello <%= current_user.username %></h4>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eligendi, quaerat cumque laboriosam temporibus aperiam aspernatur qui nulla voluptatibus! Officia libero qui ab natus facere optio nemo aperiam error ea.</p>
   </div>
