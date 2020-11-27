@@ -6,8 +6,22 @@
         <i class="fas fa-angle-left"></i>
         <% end %>
       </div>
-      <%= link_to root_path do %>
-        <%= image_tag "greata.jpg", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% if params[:controller] == "categories" && params[:action] == "index" && "show" %>
+          <div class="points">
+            <%= link_to karmapoints_path do %>
+            <%= current_user.karma_points %><i class="fas fa-dollar-sign"></i>
+            <% end %>
+          </div>
+        <% elsif params[:controller] == "products" && params[:action] == "show"  %>
+          <div class="points">
+            <%= link_to karmapoints_path do %>
+            <%= current_user.karma_points %><i class="fas fa-dollar-sign"></i>
+            <% end %>
+          </div>
+        <% else %>
+        <%= link_to root_path do %>
+          <%= image_tag "greata.jpg", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

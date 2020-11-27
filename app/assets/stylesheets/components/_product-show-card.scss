@@ -10,11 +10,11 @@
 
 
 .small {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   background-color: $marketplace;
-  padding: 20px 30px !important;
-
+  padding: 20px 0px !important;
+  width: 275px;
   margin-top: 40px;
   text-align: center;
 }
@@ -97,7 +97,7 @@
   margin-top: 20px;
   font-family: "montserrat";
   font-weight: 400;
-  opacity: 0.6;
+  // opacity: 0.6;
 
 }
 
@@ -145,3 +145,18 @@
   padding-bottom: 3px;
   }
 }
+
+.title-price {
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    margin-top: 5px;
+  }
+}
+
+
+
+
+
+
+
