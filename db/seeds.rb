@@ -2,26 +2,19 @@
 require 'open-uri'
 require 'nokogiri'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 Event.destroy_all
 User.destroy_all
 Category.destroy_all
 Product.delete_all
-=======
-=======
->>>>>>> master
+
 Product.delete_all
 Event.destroy_all
 Category.destroy_all
 Post.destroy_all
 User.destroy_all
 Comment.destroy_all
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
+
 
 puts 'Creating categories'
 Category.create(name: 'Fashion')
@@ -46,10 +39,7 @@ end
 puts 'creating user'
 
 laura = User.create(email: 'laura@gmail.com', password: '123456')
-=======
-=======
 
->>>>>>> master
   url_title = title.downcase.gsub(" ", "")
   url = "https://bosqueplants.com/en/plants/#{url_title}"
   # p url_title
@@ -69,14 +59,12 @@ laura = User.create(email: 'laura@gmail.com', password: '123456')
 end
 puts "Congrats you now have #{Product.count} products."
 puts "Finish creating products"
-<<<<<<< HEAD
->>>>>>> master
-=======
+
 
 puts 'creating users'
 
 laura = User.create(email: 'laura@impact.com', password: '123456', username: 'footer20')
->>>>>>> master
+
 
 puts 'creating events'
 file4 = URI.open('https://res.cloudinary.com/dsij1zq1l/image/upload/v1606408223/Impact%20events/pexels-suzy-hazelwood-1855203_faqkym.jpg')
