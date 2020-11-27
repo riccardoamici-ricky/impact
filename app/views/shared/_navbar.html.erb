@@ -2,7 +2,9 @@
   <div class="nav_impact">
     <% unless params[:controller] == "pages" && params[:action] == "home" %>
       <div class="carot">
+        <%= link_to :back do %>
         <i class="fas fa-angle-left"></i>
+        <% end %>
       </div>
       <%= link_to root_path do %>
         <%= image_tag "greata.jpg", class: "avatar-bordered", alt: "avatar-bordered" %>
