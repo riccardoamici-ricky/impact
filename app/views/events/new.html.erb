@@ -10,7 +10,7 @@
     <%= f.input :neighbourhood, collection: Event.neighbourhoods %>
     <%= f.input :start_time, as: :string, type: :text, input_html: {class: "datepicker"}  %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "POST EVENT", class: "btn btn-primary" %>
+    <%= f.submit "POST EVENT", class: "btn btn-flat event" %>
   <% end %>
 </div>
 
