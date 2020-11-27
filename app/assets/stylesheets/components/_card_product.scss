@@ -1,0 +1,64 @@
+.card-product > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-product {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: 350px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    
+  }
+  .card-product h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    font-family: "montserrat";;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    margin: 5px;
+  }
+
+  .card-product .product-description {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    font-family: "montserrat";
+  }
+
+  .card-display {
+      display: inline-flex;
+  }
+
+  .btn-product {
+      background-color: $marketplace;
+      color: white;
+      border-radius: 4px;
+      margin: 5px 5px 10px;
+      width: 250px;
+      font-family: "montserrat";
+      font-weight: 500;
+      letter-spacing: 4px;
+      padding: 8px 10px !important;
+      margin-top: 40px;
+      font-size: 12px;
+    
+    }
+
+  .h5 {
+    font-family: "montserrat";
+  }
+
+  .h3 {
+    font-family: "montserrat";
+  }

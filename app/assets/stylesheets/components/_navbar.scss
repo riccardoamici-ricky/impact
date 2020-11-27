@@ -13,18 +13,22 @@
 
 .navbar {
   background: transparent;
+  // border-bottom: 1px solid #222222;
 }
 
 .navbar-toggler {
   border: none;
+  outline: 0px dotted !important;
+  outline: 0px auto -webkit-focus-ring-color !important;
 }
+
 
 .navbar-fullscreen {
     min-height: 100vh;
     position: absolute;
     z-index: 100;
     top: 0;
-    background: white;
+    // background: white;
     width: 100%;
     left: 0px;
     background: #222222;
@@ -72,7 +76,49 @@
     padding-top: 10px;
     border-bottom: 1px solid white;
 }
+
 .nav-item {
   color: white;
 }
+
+
+.nav_impact {
+  text-decoration: none;
+  // margin-top: 10px;
+  display: flex;
+  align-items: center;
+  a {
+    color: #222222;
+    font-size: 30px;
+    padding: 0.25rem 0.75rem;
+    margin-left: 110px;
+    }
+  i {
+    margin-right: 10px;
+  }
+}
+
+
+.fa-bomb {
+  border: 2px solid #222222;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.avatar-bordered {
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+
+
+.carot {
+  font-size: 30px;
+}
+
+
+
+
 
