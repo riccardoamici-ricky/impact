@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,4 +33,24 @@ import "../plugins/flatpickr"
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initTrash();
 });
+
+
+
+const initTrash = () => {
+  const showTrash = (e) => {
+    console.log(document.querySelector(".fa-trash"))
+      const trashBin = document.querySelectorAll(".fa-trash").forEach((bin => {
+        bin.classList.toggle("trash-bin-hidden");
+        bin.classList.toggle("trash-bin");
+      }))
+
+      // e.target.classList.toggle("trash-bin");
+  }
+  const comments = document.querySelectorAll('.comment-item');
+  comments.forEach ((comment) => {
+  comment.addEventListener('click', showTrash);
+  });
+}
+
