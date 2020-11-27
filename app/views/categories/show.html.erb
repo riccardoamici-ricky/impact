@@ -8,20 +8,21 @@
             placeholder: "Search for products ..."%>
       </div>
     <% end %>
-  <h5>Choose your <%= @category.name %></h5>
   
   <div class="card-container">
    <div class="row">
     <% @products.each do |product| %>
-        <div class="col-6 p-0">
+        <div class="col-12 p-0">
         <div class="card-product m-2">
           <img src= <%= product.image %> >
           <div class="card-header d-flex justify-content-between"> 
-            <h5 class="header"> <%= product.title %> </h5>
-            <h5 class="card-pricing"> <%= product.price %> € </h5>
+            <h4 class="header"> <%= product.title %> </h4>
+            <h4 class="card-pricing"> <%= product.price %> € </h4>
           </div>
-          <p class="card-description"><%= product.description[0...50] %>...</p>
-          <%= link_to "SHOW", product_path(product), class: "btn-product" %>
+          <p class="card-description"><%= product.description[0...135] %>...</p>
+          <div class="col-12 p-0 m-0 d-flex flex-grow">
+            <%= link_to "SHOW", product_path(product), class: "btn-product col-12 text-center m-0" %>
+          </div>
         </div>
       </div>
        <% end %>
