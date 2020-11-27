@@ -14,24 +14,37 @@
         </div>
       </div>
       <div class="comments">
-          <ul>
-            <% post.comments.each do |comment| %>
-              <li style="background-color: #F4F4F4; margin-top: 5px">
-                <% if comment.user.photo.attached? %>
-                  <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar" %>
-                <% end %>
-                <%= comment.user.username %>
-                <%= comment.content %>
-              </li>
-            <% end %>
-          </ul>
-           <%= simple_form_for [ post, @comment ], remote: true do |f| %>
-           <%= f.input :content %>
-           <%= f.submit "Comment", class: "btn btn-primary" %>
-           <% end %>
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li class="comment-item">
+             <main>\</main>  <div>
+                <%= link_to post_comment_path(post.id, comment),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash trash-bin-hidden"></i>
+                  <% end %>
+              </div>
+              <% if comment.user.photo.attached? %>
+                <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar" %>
+              <% end %>
+              <%= comment.user.username %>
+              <%= comment.content %>
+            </li>
+          <% end %>
+        </ul>
+          <!-- <div id="comment-modal">
+            <a rel="nofollow" data-method="delete" id="modal-delete">DELETE COMMENT</a>
+          </div> -->
+          <%= simple_form_for [ post, @comment ], remote: true do |f| %>
+            <%= f.input :content %>
+            <%= f.submit "Comment", class: "btn btn-primary" %>
+          <% end %>
       </div>
     <% end %>
   </div>
 
   <%= link_to 'NEW', new_post_path, class: "btn-landing" %>
+</div>
+<div class="modal-wrapper">
+
 </div>
