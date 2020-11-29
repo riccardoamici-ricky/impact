@@ -1,8 +1,8 @@
 .post{
+  margin-top: 25px !important;
   background-color: $soft-gray;
   border: 1px solid $very-light-gray;
   border-bottom: 15px solid $light-orange;
-  margin-top: 20px !important;
   padding: 20px;
   margin: auto;
   border-radius: 5px;
@@ -10,7 +10,7 @@
 .title-post{
   font-size: 19px;
   // background-color: $rosee;
-  text-align: center;
+  margin-left: 4px;
   // border: 1px solid $very-light-gray;
   // a{
   //   color: $orange;
@@ -18,9 +18,41 @@
   // }
 }
 .post-content{
+  text-align: justify;
   border-top: 1px solid $very-light-gray;
   border-bottom: 1px solid $very-light-gray;
   margin-top: 15px;
   padding: 10px;
   border-radius: 5px;
+}
+.userdetails{
+  margin-left: 7px;
+}
+.category{
+  text-align:right;
+  position: relative;
+  top: -40px;
+  // background-color: $orange;
+  width: 80px;
+  margin-left: 67%;
+  color: $black;
+}
+.striscia{
+  opacity: 0.6;
+  background-color: $orange;
+  bottom: 9%;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.edit{
+  padding-left: 10px;
+  a{
+    color: $orange;
+  }
+}
+.heart{
+  padding-left: 10px;
 }

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :posts do
     resources :comments
+    resources :likes
   end
   resources :events
   resources :categories, only: [:index, :show]

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :karmapoints
   has_many :reviews
   has_many :events, through: :participations
+  has_many :likes, dependent: :destroy
   validates :username, presence: true, uniqueness: true
   has_one_attached :photo
 end
