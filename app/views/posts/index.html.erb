@@ -1,25 +1,61 @@
+<div class="navbar-posts">
+  <ul>
+    <li>
+      <%= link_to new_post_path, method: :get do %>
+        <i class="fas fa-pencil-alt" id="plus"></i>
+      <% end %>
+    </li>
+  </ul>
+</div>
 <div class="container">
   <div class="daily-quote">
     <i class="fas fa-quote-left"></i><br><h1 class="quote">We can't control everything that happens, but we can change our experience of those things</h1><i class="fas fa-quote-right"></i>
   </div>
-</div>
-<div class="navbar-posts">
-  <div class="new-event">
-    <%= link_to new_post_path, method: :get do %>
-      <i class="fas fa-plus" id="linkawesome"></i>
-    <% end %>
-  </div>
-</div>
-<div class="container">
   <div class="posts">
     <% @posts.each do |post| %>
       <div class="post">
-        <div class="title-post">
-          <h1 class="title-post"><%= post.title %></h1>
+        <div class="userdetails d-flex">
+          <div class="comment-photo">
+            <% if post.user.photo.attached? %>
+              <%= cl_image_tag post.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
+            <% end %>
+          </div>
+          <div class="username">
+            <%= post.user.username %>
+          </div>
         </div>
+        <div class="category">
+            <%= post.category.upcase %>
+          <div class="striscia">
+          </div>
+        </div>
+        <div class="title-post">
+          <h1 class="title-post"><%= post.title.upcase %></h1>
+        </div>
+      <!--   <div class="date-post">
+          <%= post.date %>
+        </div> -->
         <div class="post-content">
           <%= post.content %>
         </div>
+       <% if post.user.id == current_user.id %>
+        <div class="edit">
+          <%=  link_to "Edit Post", edit_post_path(post) %> <%= link_to post_path(post),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+        </div>
+        <% end %>
+        <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+          <%= link_to '🧡', post_like_path(post, pre_like), class: "heart", method: :delete %>
+        <% else %>
+          <%= link_to '🧡', post_likes_path(post), class: "heart", method: :post %>
+        <% end %>
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+          💬
+        <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
       </div>
       <div class="comments">
         <ul>
@@ -36,13 +72,15 @@
               <div class="content-comment">
                 <%= comment.content %>
               </div>
-              <div>
-                <%= link_to post_comment_path(post.id, comment),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                    <i class="fas fa-trash hidden"></i>
-                  <% end %>
-              </div>
+              <% if comment.user.id == current_user.id %>
+                <div>
+                  <%= link_to post_comment_path(post.id, comment),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do %>
+                      <i class="fas fa-trash hidden"></i>
+                    <% end %>
+                </div>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -57,8 +95,8 @@
     <% end %>
   </div>
 
-
 </div>
-<div class="modal-wrapper">
 
+
+<div class="modal-wrapper">
 </div>
