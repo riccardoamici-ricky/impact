@@ -6,7 +6,15 @@ class EventsController < ApplicationController
   #   using: {
   #     tsearch: { prefix: true }
   #   }
+  def my_events
+    @events = current_user.events
+  end
 
+  def filter
+    @my_events = current_user.events
+    @joined_events = current_user.joined_events
+    @all_events = @my_events + @joined_events
+  end
 
   def index
     if params[:query].present?
@@ -28,7 +36,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-
+    @participation = Participation.new
   end
 
   def new
@@ -39,6 +47,7 @@ class EventsController < ApplicationController
     # @user = current_user
     # @event.user = @user
     @event = Event.new(event_params)
+    @event.user = current_user
     if @event.save
       redirect_to @event, notice: 'create_event'
     else
@@ -47,9 +56,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    #@user = current_user
+    @user = current_user
     @event = Event.find(params[:id])
-    #@event.user = @user
+    @event.user = @user
   end
 
   def update
