@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_170731) do
+ActiveRecord::Schema.define(version: 2020_11_30_110515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,16 +61,16 @@ ActiveRecord::Schema.define(version: 2020_11_29_170731) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "neighbourhood"
     t.string "category"
+    t.float "latitude"
+    t.float "longitude"
   end
 
-  create_table "follows", force: :cascade do |t|
-    t.integer "following_id", null: false
-    t.integer "follower_id", null: false
+  create_table "karmapoints", force: :cascade do |t|
+    t.integer "value"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["follower_id"], name: "index_follows_on_follower_id"
-    t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
-    t.index ["following_id"], name: "index_follows_on_following_id"
+    t.index ["user_id"], name: "index_karmapoints_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_170731) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "karmapoints", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "participations", "events"

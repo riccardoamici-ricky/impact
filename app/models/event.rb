@@ -5,6 +5,9 @@ class Event < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :address, :start_time, :category, :description, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def self.categories
     ["Charity", "Environment", "Sustainability", "Protests"]
   end

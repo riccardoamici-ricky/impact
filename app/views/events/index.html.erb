@@ -2,11 +2,24 @@
 <div class="container-events">
 
 
-
+      <p>
+        <a class="btn btn-map" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Show Map
+        </a>
+      </p>
   <h2> Events in your city... <%= link_to new_event_path, method: :get do %>
       <i class="fas fa-plus" id="linkawesome"></i>
           <% end %> </h2>
+          
 
+        <div class="collapse" id="collapseExample">
+          <div id="map"
+            style="width: 100%; height: 300px; border: 2px solid; border-color: #598392"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+          </div>
+        </div>
+  
 
 
     <div class="index">
@@ -25,10 +38,4 @@
 
     <% end %>
   </div>
-
 </div>
-
-
-
-
-

@@ -35,10 +35,11 @@
       <p class="event-facts"> Facts</p>
       <p>When you help others, you give off positive vibes, which can rub off on your peers and improve your friendships!</p>
       </div>
-      <div class="map">
-
+      <div id="map"
+        style="width: 100%; height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
-    </div>
 
   </div>
     <div class="foot">
