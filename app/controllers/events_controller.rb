@@ -10,6 +10,12 @@ class EventsController < ApplicationController
     @events = current_user.events
   end
 
+  def filter
+    @my_events = current_user.events
+    @joined_events = current_user.joined_events
+    @all_events = @my_events + @joined_events
+  end
+
   def index
     if params[:query].present?
       sql_query = "title ILIKE :query OR category ILIKE :query"
