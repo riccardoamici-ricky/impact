@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     resources :comments
     resources :likes
   end
-  resources :events
+  resources :events do
+    resources :participations, only: [:create]
+
+  end
+
+  get "my_events", to: "events#my_events"
   resources :categories, only: [:index, :show]
 
   get "/profile", to: "pages#profile"

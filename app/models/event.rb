@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   has_one_attached :photo
+  belongs_to :user
   has_many :users, through: :participations
 
   validates :title, presence: true, uniqueness: true
