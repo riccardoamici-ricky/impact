@@ -8,7 +8,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import { initMapbox } from '../plugins/init_mapbox';
 
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -21,7 +25,18 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
-
+const initUpdateNavbarOnScroll = () => {
+  const navbar = document.querySelector('.navbar-posts');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 600) {
+        navbar.classList.add('navbar-hidden');
+      } else {
+        navbar.classList.remove('navbar-hidden');
+      }
+    });
+  }
+}
 // External imports
 import "bootstrap";
 
@@ -39,9 +54,13 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initTrash();
   initSweetalert();
+
   hideFooterOnScroll();
   decreaseKarmapoints();
+  initUpdateNavbarOnScroll();
 });
+
+
 
 
 
