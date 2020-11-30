@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_30_131951) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,9 +62,15 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "neighbourhood"
     t.string "category"
-
     t.float "latitude"
     t.float "longitude"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followee_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "likes", force: :cascade do |t|

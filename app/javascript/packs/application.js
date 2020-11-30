@@ -25,7 +25,18 @@ document.addEventListener('turbolinks:load', () => {
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
-
+const initUpdateNavbarOnScroll = () => {
+  const navbar = document.querySelector('.navbar-posts');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 600) {
+        navbar.classList.add('navbar-hidden');
+      } else {
+        navbar.classList.remove('navbar-hidden');
+      }
+    });
+  }
+}
 // External imports
 import "bootstrap";
 
@@ -41,7 +52,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initTrash();
   initSweetalert();
+  initUpdateNavbarOnScroll();
 });
+
+
 
 
 
