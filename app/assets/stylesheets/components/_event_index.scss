@@ -1,0 +1,48 @@
+.btn-event {
+    background-color: $impact;
+    border-radius: 0 0 4px 4px;
+    font-family: "montserrat";
+    font-weight: 500;
+    letter-spacing: 4px;
+    padding: 8px 10px !important;
+    font-size: 13px;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+  }
+   
+  .index a {
+    color: white;
+  }
+
+  .card-event-index {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    height: fit-content;
+    border-radius: 5px;
+  }
+
+  .card-event-index > img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .event-category,
+  .neighbourhood {
+      font-size: 12px;
+  }
+
+  .event-desc {
+      font-size: 15px;
+  }
+
+  .date {
+      font-size: 13px;
+  }
+  
+  .far {
+      color: $impact;
+      size: 17px;
+  }
