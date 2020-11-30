@@ -1,5 +1,9 @@
 class ParticipationsController < ApplicationController
 
+  def my_participations
+    @participations = current_user.participations
+  end
+
   def create
 
     @participation = Participation.new

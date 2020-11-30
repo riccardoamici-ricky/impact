@@ -48,7 +48,8 @@
 
         <%#= link_to "JOIN", "/my_events", notice: 'join_event', class: "btn btn-flat event", notice: 'join_event'%>
   <%= simple_form_for([@event, @participation]) do |f|  %>
-  <%= f.submit "JOIN" %>
+
+  <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
   <% end %>
     </div>
   </div>
