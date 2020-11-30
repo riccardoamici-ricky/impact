@@ -1,13 +1,6 @@
 <div class="container content">
   <div class="show-card">
-    <div class="search-form-control form-group">
-        <%= form_tag category_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for products ..."%>
-      </div>
-    <% end %>
+
     <div class="title-price">
       <h2 class="title"><%= @product.title.upcase %></h2>
       <h4><%= @product.price %> €</h4>
@@ -43,7 +36,7 @@
     </div>
     <div>
 
-      <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert", data: {
+      <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert karmajs", data: {
        url: @product.url,
        buy_path: request.protocol + request.host + (request.host_with_port if Rails.env.development?) + buy_path
       } %>
@@ -54,7 +47,17 @@
     </div>
 
   </div>
-
+  <div class="navbar-karma">
+    <ul>
+      <li>
+        <div>
+            <%= link_to karmapoints_path do %>
+            Your karma: <span id='karmapoints'><%= current_user.karma_points %> </span><i class="fas fa-gem"></i>
+            <% end %>
+          </div>
+      </li>
+    </ul>
+  </div>
 
 
 </div>

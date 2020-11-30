@@ -1,18 +1,29 @@
 <div class="container">
   <div class="show-card">
-     <div class="search-form-control form-group">
-        <%= form_tag method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for products ..."%>
-      </div>
-    <% end %>
-</div>
+    <div class="search-form-control form-group">
+      <%= form_tag categories_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search for products ..."%>
+      <% end %>
+    </div>
+  </div>
 
   <% @categories.each do |category| %>
-    <div class="card-category" style=" margin-left: 0px; margin-right: -; margin-right: 0px; background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @images[category.name] %>)"> 
+    <div class="card-category" style=" margin-left: 0px; margin-right: -; margin-right: 0px; background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @images[category.name] %>)">
       <%= link_to category.name.upcase, category_path(category) %>
     </div>
     <% end %>
+    <div class="navbar-karma">
+    <ul>
+      <li>
+        <div>
+            <%= link_to karmapoints_path do %>
+            Your karma: <span id='karmapoints'><%= current_user.karma_points %></span> <i class="fas fa-gem"></i>
+            <% end %>
+          </div>
+      </li>
+    </ul>
   </div>
+</div>
