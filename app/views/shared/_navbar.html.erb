@@ -1,29 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="nav_impact">
+
     <% unless params[:controller] == "pages" && params[:action] == "home" %>
       <div class="carot">
         <%= link_to :back do %>
         <i class="fas fa-angle-left"></i>
         <% end %>
       </div>
-        <% if params[:controller] == "categories" && params[:action] == "index" && "show" %>
-          <div class="points">
-            <%= link_to karmapoints_path do %>
-            <%= current_user.karma_points %><i class="fas fa-dollar-sign"></i>
-            <% end %>
-          </div>
-        <% elsif params[:controller] == "products" && params[:action] == "show"  %>
-          <div class="points">
-            <%= link_to karmapoints_path do %>
-            <%= current_user.karma_points %><i class="fas fa-dollar-sign"></i>
-            <% end %>
-          </div>
-        <% else %>
-        <%= link_to root_path do %>
-          <%= image_tag "greata.jpg", class: "avatar-bordered", alt: "avatar-bordered" %>
-        <% end %>
+      <div class="logo-nav">
+        <%= link_to "IMPACT", root_path %>
+      </div>
       <% end %>
-    <% end %>
   </div>
 
   <button class="navbar-toggler navbar-toggler-z collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +36,7 @@
         <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to karmapoints_path, class: "nav-link nav-name" do %>
-           Karmapoints <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>
+           Karmapoints  <i class="fas fa-gem"></i>
            <% end %>
 
           <%= link_to "My Events", "#", class: "nav-link nav-name" %>
@@ -71,5 +58,10 @@
           <%= link_to "How We Rate", howwerate_path, class: "nav-link nav-name" %>
         </li>
     </ul>
+
+
+    <div>
+      <i class="fab fa-facebook social_first"></i> <i class="fab fa-instagram social"></i> <i class="fab fa-github social"></i>
+    </div>
   </div>
 </div>

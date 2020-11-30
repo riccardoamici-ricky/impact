@@ -46,12 +46,17 @@ import { initSweetalert } from "../plugins/init_sweetalert"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initTrash } from '../components/deletecomments';
+import { hideFooterOnScroll } from '../components/footer';
+import { decreaseKarmapoints } from '../components/karmapoint';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initTrash();
   initSweetalert();
+
+  hideFooterOnScroll();
+  decreaseKarmapoints();
   initUpdateNavbarOnScroll();
 });
 
