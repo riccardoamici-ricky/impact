@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "neighbourhood"
     t.string "category"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
+
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -138,7 +139,9 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+
   add_foreign_key "events", "users"
+
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "participations", "events"
