@@ -1,8 +1,8 @@
 .btn-flat {
-  color: white;
+  // color: white;
   padding: 30px 60px;
   border-radius: 4px;
-  margin: 24px;
+  margin: 15px;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -12,28 +12,40 @@
 
 .button-home {
   text-align: center;
-  margin-top: 110px;
+  // margin-top: 110px;
   vertical-align: middle;
 }
 
-.Logo {
+.logo {
+  margin-top: 20px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 8px;
-  margin-top: 29px;
-  font-family: "montserrat";
+  // font-size: 20px;
+  // font-weight: bold;
+  // letter-spacing: 8px;
+  // margin-top: 29px;
+  // font-family: "montserrat";
 
 }
 
 .btn-top {
-  background: $marketplace;
+  border: 1px solid;
+  border-color: $black;
+  // background-color: $black;
+  border-radius: 60px;
+  color: $black;
 }
 .btn-mid {
-  background: $impact;
+  // background-color: $black;
+  border: 1px solid;
+  border-color: $black;
+  border-radius: 60px;
+  color: $black;
 }
 .btn-low {
-  background: $post;
+  border: 1px solid;
+  border-color: $black;
+  border-radius: 60px;
+  color: $black;
 }
 
 .event {
@@ -60,5 +72,5 @@
   border-radius: 50px;
   border: 1px solid;
   border-color: $impact;
-  font-size: 10px;
+  font-size: 13px;
 }
