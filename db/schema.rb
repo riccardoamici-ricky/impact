@@ -74,14 +74,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "karmapoints", force: :cascade do |t|
-    t.integer "value"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_karmapoints_on_user_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -156,7 +148,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
-  add_foreign_key "karmapoints", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "participations", "events"
