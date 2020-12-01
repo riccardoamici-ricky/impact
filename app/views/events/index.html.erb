@@ -11,7 +11,7 @@
   <h2> Events in your city <%= link_to new_event_path, method: :get do %>
       <i class="fas fa-plus" id="linkawesome"></i>
           <% end %> </h2>
-          
+
 
         <div class="collapse" id="collapseExample">
           <div id="map"
@@ -20,7 +20,7 @@
             data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
           </div>
         </div>
-  
+
 
 
     <div class="index mx-2">
@@ -34,7 +34,7 @@
               <h2 class="main-title"><%= event.title %></h2>
               <p class="card-event-info"><div id="date"><i class="far fa-calendar-alt"></i>
               <%= (event.start_time).to_s(:short) %></div>
-              
+
             </div>
             <ul class="list-inline">
               <li class="list-inline-item"><p class="neighbourhood"><%= event.neighbourhood %></p></li>
@@ -42,7 +42,7 @@
             </ul>
             <p class="event-desc"><%=event.description%></p>
           </div>
-          
+
           <div class="col-12 p-0 m-0 d-flex flex-grow">
             <%= link_to "EVENT DETAILS", event_path(event), class: "btn-event col-12 text-center m-0" %>
           </div>

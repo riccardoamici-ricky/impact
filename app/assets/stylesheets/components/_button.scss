@@ -27,13 +27,16 @@
 }
 
 .btn-top {
-  background: $marketplace;
+  // background: $marketplace;
+  background: linear-gradient(#4aacb6, $marketplace);
 }
 .btn-mid {
-  background: $impact;
+  // background: $impact;
+  background: linear-gradient(#ff7579, $impact);
 }
 .btn-low {
-  background: $post;
+  // background: $post;
+  background: linear-gradient(#ffcf56,$post);
 }
 
 .event {
@@ -61,4 +64,17 @@
   border: 1px solid;
   border-color: $impact;
   font-size: 13px;
+}
+
+.btn-map-show {
+  border-bottom: 1px solid #222222;
+  text-align:center;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 3px;
+}
+
+.showmap {
+  text-align: center;
+  margin-bottom: 8px;
 }

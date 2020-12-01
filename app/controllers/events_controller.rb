@@ -22,8 +22,8 @@ class EventsController < ApplicationController
         @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
       @events = Event.all
-    end    
-    
+    end
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -37,6 +37,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @participation = Participation.new
+
   end
 
   def new
