@@ -1,20 +1,21 @@
 
 <div class="container-events">
 
-
+    <div class="event-card"></div>
       <p>
+      <br>
         <a class="btn btn-map" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
           Show Map
         </a>
       </p>
-  <h2> Events in your city... <%= link_to new_event_path, method: :get do %>
+  <h2> Events in your city <%= link_to new_event_path, method: :get do %>
       <i class="fas fa-plus" id="linkawesome"></i>
           <% end %> </h2>
           
 
         <div class="collapse" id="collapseExample">
           <div id="map"
-            style="width: 100%; height: 300px; border: 2px solid; border-color: #598392"
+            style="width: 100%; height: 300px; m-0"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
           </div>
@@ -22,29 +23,30 @@
   
 
 
-    <div class="index">
+    <div class="index mx-2">
      <% @events.each do |event| %>
       <div class="card-event-index">
           <% if event.photo.attached? %>
           <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
           <div class="card-trip-pricing">
-            <div class="card-header d-flex justify-content-between">
+            <div class="card-header-event d-flex justify-content-between">
               <h2 class="main-title"><%= event.title %></h2>
               <p class="card-event-info"><div id="date"><i class="far fa-calendar-alt"></i>
               <%= (event.start_time).to_s(:short) %></div>
               
             </div>
-            <p class="neighbourhood"><%= event.neighbourhood %></div></p>
-            <p class="event-category"><%=event.category%></p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><p class="neighbourhood"><%= event.neighbourhood %></p></li>
+              <li class="list-inline-item"><p class="event-category"><%=event.category%></p></li>
+            </ul>
             <p class="event-desc"><%=event.description%></p>
           </div>
           
           <div class="col-12 p-0 m-0 d-flex flex-grow">
-            <%= link_to "JOIN", event_path(event), class: "btn-event col-12 text-center m-0" %>
+            <%= link_to "EVENT DETAILS", event_path(event), class: "btn-event col-12 text-center m-0" %>
           </div>
-        </div>
-
-    <% end %>
-  </div>
+        <% end %>
+      </div>
+    </div>
 </div>
