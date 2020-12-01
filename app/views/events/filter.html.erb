@@ -39,7 +39,8 @@
   <p> You will join </p>
     <ul>
       <% @joined_events.each do |event| %>
-      <li> <div class="card-trip">
+      <li>
+        <div class="card-trip">
           <% if event.photo.attached? %>
           <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
