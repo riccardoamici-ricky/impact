@@ -56,7 +56,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initTrash();
   initSweetalert();
-
+  initMapbox();
   hideFooterOnScroll();
   decreaseKarmapoints();
   initUpdateNavbarOnScroll();
