@@ -4,29 +4,47 @@
   <div class="card-event">
 
     <div class="title">
-      <h4 class="main-title"><%= @event.title %>
-
-
-
-
-        </div></h4>
-
+      <h4 class="main-title"><%= @event.title %></h4>
+        <!-- <div class="trash"><%= link_to edit_event_path(@event[:id]), method: :get do %>
+              <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+          <% end %> -->
+        </div>
     </div>
 
 
 
     <div class="photo">
       <div class="event-photo"><%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="description">
+        <p class="event-description"><%= @event.description %></p>
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td class="desc-title">Date</td>
+            <td class="desc-content"><%= (@event.start_time).to_s(:short) %></td>
+          </tr>
+          <tr>
+            <td class="desc-title">Location</td>
+            <td class="desc-content"><%= @event.neighbourhood %></td>
+          </tr>
+          <tr>
+            <td class="desc-title">Category</td>
+            <td class="desc-content"><%= @event.category %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="date">
+    <!-- <div class="date">
       <p class="event-date"><%= (@event.start_time).to_s(:short) %></p>
       <p class="event-neighbourhood"> <%= @event.neighbourhood %></p>
-    </div>
-
-    <div class="description">
-      <p class="event-description"><%= @event.description %></p>
-    </div>
+    </div> -->
 
 
     <div class="facts-and-map">
@@ -34,20 +52,25 @@
       <p class="event-facts"> Facts</p>
       <p>When you help others, you give off positive vibes, which can rub off on your peers and improve your friendships!</p>
       </div>
-      <div id="map"
-        style="width: 100%; height: 400px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <div class="showmap">
+        <a class="btn btn-map-show" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"  aria-controls="collapseExample">Show map <i class="fas fa-angle-double-right"></i></a>
       </div>
+    <div class="collapse" id="collapseExample">
+          <div id="map"
+            style="width: 100%; height: 300px; m-0"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+          </div>q
+    </div>
 
+    <div class="foot">
+        <%= simple_form_for([@event, @participation]) do |f|  %>
+        <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
+        <% end %>
   </div>
     <div class="foot">
 
 
     </div>
-  </div>
-
-
 </div>
-
 

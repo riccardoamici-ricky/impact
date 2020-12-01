@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   end
 
   def index
+
     @participation = Participation.new
     @events = Event.all
 
@@ -31,6 +32,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @participation = Participation.new
+
     @address = @event.address
     @events = Event.near(@address, 3)
     @markers = @events.geocoded.map do |event|

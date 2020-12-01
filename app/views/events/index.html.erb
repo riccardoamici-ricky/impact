@@ -42,7 +42,7 @@
             </ul>
             <p class="event-desc"><%=event.description%></p>
           </div>
-            <% unless current_user.joined_events.include?(event) %>
+
           <div class="col-12 p-0 m-0 d-flex flex-grow">
 
             <%= link_to "EVENT DETAILS", event_path(event), class: "btn-event col-12 text-center m-0" %>

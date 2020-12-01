@@ -33,4 +33,5 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
   }
 };
+
 export { initMapbox }

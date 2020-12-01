@@ -8,6 +8,7 @@ const initSweetalert = () => {
       Swal.fire({
         icon: 'warning',
         title: 'Are you sure?',
+        // className: "full-bg",
         text: 'You are about to spend 10 karma points to get a 10% discount code for this product',
         preConfirm: () => {
           fetch("/buy").then(() => {
