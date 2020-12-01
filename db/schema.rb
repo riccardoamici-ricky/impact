@@ -61,8 +61,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_131951) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "neighbourhood"
     t.string "category"
+    t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
+
     t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end

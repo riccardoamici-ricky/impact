@@ -10,11 +10,19 @@ class ParticipationsController < ApplicationController
     @participation.user = current_user
     @event = Event.find(params[:event_id])
     @participation.event = @event
-
     if @participation.save
       redirect_to @event
     else
-      render :new
+      redirect_to events_path, alert: "You already joined this event"
     end
    end
+
+  def destroy
+    @participation = Participation.find(params[:id])
+    if current_user.participations.includes(@participation)
+      @participation.destroy
+    redirect_to @participation.event, notice: 'destroy_event'
+    end
+  end
+
 end

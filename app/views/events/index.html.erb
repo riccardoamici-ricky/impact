@@ -23,7 +23,7 @@
 
 
 
-    <div class="index mx-2">
+    <div class="index mt-2">
      <% @events.each do |event| %>
       <div class="card-event-index">
           <% if event.photo.attached? %>
@@ -44,6 +44,7 @@
           </div>
 
           <div class="col-12 p-0 m-0 d-flex flex-grow">
+
             <%= link_to "EVENT DETAILS", event_path(event), class: "btn-event col-12 text-center m-0" %>
           </div>
         <% end %>

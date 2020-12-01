@@ -63,34 +63,14 @@
           </div>q
     </div>
 
-<!--
-  <div class="navbar-karma">
-      <ul>
-        <li>
-              <div><%= link_to edit_event_path(@event[:id]), method: :get do %>
-              <i class="fas fa-pencil-alt social-black"></i>
-              <% end %>
-              <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt social-black"></i>
-              <% end %>
-            </div>
-        </li>
-      </ul>
-    </div> -->
-
     <div class="foot">
         <%= simple_form_for([@event, @participation]) do |f|  %>
         <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
         <% end %>
-    </div>
-   <!--  <div class="editdelete">
-      <%= link_to edit_event_path(@event[:id]), method: :get do %>
-      edit <i class="fas fa-angle-double-right"></i>
-      <% end %>
-      <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
-      delete <i class="fas fa-angle-double-right"></i>
-      <% end %>
-    </div> -->
+  </div>
+    <div class="foot">
 
+
+    </div>
 </div>
 
