@@ -37,26 +37,26 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <!-- ALL THE EVENTS JOINED -->
+        <ul>
+          <% @user.joined_events.each do |event| %>
+            <%= render partial: "shared/joined-event", locals: { event: event } %>
+          <% end %>
+        </ul>
       </div>
       <div class="tab-pane fade show active" id="nav-impact" role="tabpanel" aria-labelledby="nav-impact-tab">
          <% @user.posts.each do |post| %>
-          <div class="title-post">
-            <h1 class="title-post"><%= post.title.upcase %></h1>
-          </div>
-          <div class="post-content">
-            <%= post.content %>
-          </div>
+            <%= render partial: "shared/post-in-the-show", locals: { post: post } %>
+
        <% end %>
       </div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <!-- ALL THE POSTS LIKED -->
+        <% @likes.to_a.each do |like| %>
+          <%= render partial: "shared/post-in-the-show", locals: { post: like.post } %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
 

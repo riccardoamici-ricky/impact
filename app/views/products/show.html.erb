@@ -35,11 +35,17 @@
       <% end %>
     </div>
     <div>
-
-      <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert karmajs", data: {
-       url: @product.url,
-       buy_path: request.protocol + request.host + (request.host_with_port if Rails.env.development?) + buy_path
-      } %>
+      <% if Rails.env.development? %>
+        <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert karmajs", data: {
+         url: @product.url,
+         buy_path: request.protocol + request.host + request.host_with_port + buy_path
+        } %>
+      <% else %>
+        <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert karmajs", data: {
+        url: @product.url,
+        buy_path: request.protocol + request.host + buy_path
+        } %>
+      <% end %>
     </div>
     <br>
     <div class="socialmedia">
