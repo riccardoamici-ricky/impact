@@ -5,7 +5,7 @@
     font-weight: 500;
     letter-spacing: 4px;
     padding: 8px 10px !important;
-    font-size: 13px;
+    font-size: 15px;
     margin: 0;
     position: relative;
     bottom: 0;
@@ -31,7 +31,8 @@
 
   .event-category,
   .neighbourhood {
-      font-size: 12px;
+      font-size: 15px;
+      padding-left: 8px;
   }
 
   .event-desc {
@@ -39,10 +40,43 @@
   }
 
   .date {
-      font-size: 13px;
+      font-size: 12px;
   }
   
   .far {
       color: $impact;
       size: 17px;
+  }
+  .event-desc {
+      margin: 5px;
+      padding: 8px;
+    }
+    
+  .card-header-index {
+    padding-top: 10px;
+    font-family: "montserrat";
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .event-card {
+    margin-top: 20px;
+    border-top: 1px solid $impact;
+
+    h2 {
+      margin-top: 5px;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+
+  #date {
+    padding-top: 8px;
+    padding-right: 5px;
+    font-size: 15px;
+  }
+  .index {
+    padding: 16px;
   }
