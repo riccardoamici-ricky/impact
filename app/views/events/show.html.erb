@@ -83,14 +83,14 @@
         <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
         <% end %>
     </div>
-    <div class="editdelete">
+   <!--  <div class="editdelete">
       <%= link_to edit_event_path(@event[:id]), method: :get do %>
       edit <i class="fas fa-angle-double-right"></i>
       <% end %>
       <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
       delete <i class="fas fa-angle-double-right"></i>
       <% end %>
-    </div>
+    </div> -->
 
 </div>
 
