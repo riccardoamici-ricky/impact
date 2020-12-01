@@ -1,4 +1,25 @@
 // Specific CSS for your home-page
-#post_category{
-  width: 100%;
+// #post_category{
+//   width: 100%;
+// }
+.homepage-black-circle {
+  // background-color: #f2e8dc;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+  margin-left: -221px;
+  margin-top: 231px;
+  visibility: hidden;
+}
+.homepage-pink-circle {
+  background-color: $rosee;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+  margin-left: -283px;
+  margin-top: -654px;
 }
