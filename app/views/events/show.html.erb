@@ -6,12 +6,10 @@
     <div class="title">
       <h4 class="main-title"><%= @event.title %>
 
-        <div class="trash"><%= link_to edit_event_path(@event[:id]), method: :get do %>
-              <i class="fas fa-pencil-alt"></i>
-          <% end %>
-          <%= link_to event_path(@event[:id]), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt"></i>
-          <% end %></div></h4>
+
+
+
+        </div></h4>
 
     </div>
 
@@ -46,12 +44,6 @@
     <div class="foot">
 
 
-
-        <%#= link_to "JOIN", "/my_events", notice: 'join_event', class: "btn btn-flat event", notice: 'join_event'%>
-  <%= simple_form_for([@event, @participation]) do |f|  %>
-
-  <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
-  <% end %>
     </div>
   </div>
 

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :likes
   end
   resources :events do
-    resources :participations, only: [:create]
+    resources :participations, only: [:create, :destroy]
     collection do
       get :filter
     end

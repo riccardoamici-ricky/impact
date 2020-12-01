@@ -34,6 +34,7 @@ gem 'geocoder'
 
 gem 'devise'
 
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
