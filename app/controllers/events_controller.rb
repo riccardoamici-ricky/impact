@@ -71,7 +71,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.update(event_params)
-    redirect_to @event, notice: 'update_event'
+    redirect_to "/events/filter", notice: 'update_event'
   end
 
   def destroy

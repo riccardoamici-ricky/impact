@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Edit your event</h1>
-  <%= simple_form_for [@user, @event] do |f| %>
+  <%= simple_form_for [@event] do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :category, collection: Event.categories %>
