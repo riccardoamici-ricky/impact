@@ -51,7 +51,7 @@ puts 'creating users'
 laura = User.create(email: 'laura@impact.com', password: '123456', username: 'footer20')
 
 puts 'creating events'
-file4 = URI.open('https://res.cloudinary.com/dsij1zq1l/image/upload/v1606408223/Impact%20events/pexels-suzy-hazelwood-1855203_faqkym.jpg')
+file4 = URI.open('https://res.cloudinary.com/dsij1zq1l/image/upload/v1606896079/Impact%20events/pexels-suzy-hazelwood-1855203_fl6qdp.jpg')
 
 upcycle = Event.create!(title: "Pimp up your old clothes", description: "What if we told you that your old clothes can become amazing again? Join us in our workshop for upciclying, we provide sewing material!", address: "Leopoldplatz, Berlin", neighbourhood: "Berlin, Wedding", category: "Sustainability", start_time: "10 Dec 4:00 pm", user_id: laura[:id])
 upcycle.photo.attach(io: file4, filename: 'sewing.jpg', content_type: 'image/jpg')
