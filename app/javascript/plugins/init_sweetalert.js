@@ -13,6 +13,7 @@ const initSweetalert = () => {
         preConfirm: () => {
           fetch("/buy").then(() => {
             window.open(button.dataset.url, '_blank');
+            location.reload();
           })
         }
       })
