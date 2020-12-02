@@ -2,12 +2,13 @@
     height: 240px;
     width: 100%;
     object-fit: cover;
+
   }
 
   .card-product {
     overflow: hidden;
     background: white;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     height: fit-content;
     border-radius: 5px;
   }
@@ -19,11 +20,13 @@
   }
 
   .card-product p {
-    font-size: 12px;
+    font-size: 15px;
     opacity: .7;
     margin: 0;
     margin: 5px;
     padding: 8px;
+    text-align: justify;
+    hyphens: auto;
   }
 
   .card-product .product-description {
@@ -46,7 +49,7 @@
       font-family: "montserrat";
       font-weight: 500;
       letter-spacing: 4px;
-      padding: 8px 10px !important;
+      padding: 16px 10px !important;
       font-size: 13px;
       margin: 0;
       position: relative;
