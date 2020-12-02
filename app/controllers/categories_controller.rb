@@ -7,13 +7,13 @@ class CategoriesController < ApplicationController
       "Interior" => "https://res.cloudinary.com/dzpgbbhmm/image/upload/v1606483237/impact/interior_banner_jxlxr6.jpg",
     }
 
-      @categories = Category.all
+      @categories = policy_scope(Category)
       @categories = Category.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
   end
 
   def show
     @category = Category.find(params[:id])
-
+    authorize @category
     if params[:query].present?
       sql_query = "title ILIKE :query OR description ILIKE :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")

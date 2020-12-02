@@ -38,7 +38,7 @@
         <div class="post-content">
           <%= post.content %>
         </div>
-       <% if post.user.id == current_user.id %>
+       <% if policy(post).update? %>
         <div class="edit">
           <%=  link_to "Edit Post", edit_post_path(post) %> <%= link_to post_path(post),
                   method: :delete,
@@ -72,7 +72,7 @@
               <div class="content-comment">
                 <%= comment.content %>
               </div>
-              <% if comment.user.id == current_user.id %>
+              <% if policy(comment).update? %>
                 <div>
                   <%= link_to post_comment_path(post.id, comment),
                     method: :delete,

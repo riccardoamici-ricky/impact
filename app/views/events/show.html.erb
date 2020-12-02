@@ -45,12 +45,12 @@
       <p class="event-date"><%= (@event.start_time).to_s(:short) %></p>
       <p class="event-neighbourhood"> <%= @event.neighbourhood %></p>
     </div> -->
-
+    <% facts = ['Giving money to someone else actually makes you feel better than spending it on yourself.', 'Generous people feel better about themselves. They report a greater sense of life satisfaction and happiness.', 'Give more things away. Your life will feel lighter. Your heart will feel warmer. And the world will be better.', 'According to sociologists, teenagers who volunteer have better grades and self-image.', 'Studies show that volunteering enhances an individual’s overall sense of purpose and identity—particularly if they no longer hold a life-defining role like “worker” or “parent.”'] %>
 
     <div class="facts-and-map">
       <div class="facts">
       <p class="event-facts"> Facts</p>
-      <p>When you help others, you give off positive vibes, which can rub off on your peers and improve your friendships!</p>
+      <p><%= facts.sample  %>  </p>
       </div>
       <div class="showmap">
         <a class="btn btn-map-show" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"  aria-controls="collapseExample">Show map <i class="fas fa-angle-double-right"></i></a>

@@ -19,6 +19,9 @@ class Event < ApplicationRecord
     ["Charlottenburg-Wilmersdorf", "Friedrichshain-Kreuzberg", "Lichtenberg", "Marzahn-Hellersdorf", "Mitte", "Neukölln", "Pankow", "Reinickendorf", "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Treptow-Köpenick"]
   end
 
+  def facts
+    ['a', 'b', 'che cosaaaaa']
+  end
   # include PgSearch::Model
   # pg_search_scope :global_search,
   #   against: [ :title, :category ],
