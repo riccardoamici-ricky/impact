@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>My Events</h2>
+
+  <% if @events.any? %>
+    <ul>
+    <% @events.each_with_index(1) do |event, index| %>
+      <li>Event#<%= index %> | Title: <%= event.title %> -  <%= event.category %>
+        <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash-alt"></i>
+        <% end %>
+
+      </li>
+    <% end %>
+    </ul>
+
+  <% else %>
+    <p> You have no events to display 😢 </p>
+  <% end %>
+
+
+    <a href="/events" class="card-category-event">Find an event</a>
+    <a href="/events/:id/edit" class="card-category-event">Edit an event</a>
+
+    <a href="#" class="card-category-event">Cancel an event</a>
+
+    <a href="/karmapoints" class="card-category-event">Karmapoints</a>
+
+    <a href="/categories" class="card-category-event">Marketplace</a>
+
+    <a href="posts" class="card-category-event">Get inspired</a>
+
+
+
+
+</div>
+
+
+

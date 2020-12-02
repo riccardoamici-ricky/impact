@@ -4,28 +4,34 @@
 
   <h2>My Events</h2>
   <% if @all_events.any? %>
-    <p>Hi! You have <%= @all_events.count %> upcoming events.</p>
+    <p style="margin-bottom: 25px;">Hi! You have <%= @all_events.count %> upcoming events.</p>
   <% else %>
     <p>You have no events to display 😢 </p>
   <% end %>
 
-
-
   <div class="test">
     <% if @my_events.any? %>
       <div class="myevent-sec">
-        <p style="margin-bottom: 0px"> You will host: </p>
+        <h6 style="margin-bottom: 0px">You will host:</h6>
       </div>
 
 
-    <div class="card-container">
+    <div class="card-container cont_event">
       <div class="row">
         <% @my_events.each do |event| %>
-          <div class="col-12 p-2">
-            <div class="card-product m-2">
+          <div class="col-12 p-2" style="margin-bottom: 25px;">
+            <div class="card-product m-2 img_event">
               <% if event.photo.attached? %>
               <%= cl_image_tag event.photo.key, crop: :fill %>
               <% end %>
+              <div class="icons">
+                <div class="editx">
+                    <%= link_to edit_event_path(event) do %>Edit
+                    <i class="fas fa-angle-double-right"></i>
+                    <% end %>
+                </div>
+
+              </div>
               <div class="card-header d-flex justify-content-between">
                 <div class="myevent-title">
                   <h2><%= link_to event.title, event_path(event)%></h2>
@@ -48,11 +54,10 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+
 <% if @joined_events.any? %>
   <div class="myevent-sec">
-    <p style="margin-bottom: 0px"> You will join: </p>
+    <h6 style="margin-bottom: 0px"> You will join:</h6>
   </div>
 <div class="card-container">
   <div class="row">
@@ -62,19 +67,7 @@
           <% if event.photo.attached? %>
           <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
-          <div class="card-header d-flex justify-content-between">
-            <h2 class="myevent-title"><%= link_to event.title, event_path(event)%></h2>
-            <div id="date"><i class="far fa-calendar-alt"></i>
-              <%= (event.start_time).to_s(:short) %> <br>
-              <%= event.neighbourhood %>
-            </div>
-          </div>
-          <p class="card-description"><%=event.description%></p>
-          <div class="col-12 p-0 m-0 flex-grow">
-            <%= link_to event_participation_path(event, event.participations.find_by(user: current_user)), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <button type="button" class="btn-event col-12 text-center m-0">CANCEL YOUR PARTICIPATION</button>
 
-            <% end %>
             <div class="card-header d-flex justify-content-between">
               <h2 class="myevent-title"><%= link_to event.title, event_path(event)%></h2>
               <div id="date"><i class="far fa-calendar-alt"></i>
@@ -95,3 +88,6 @@
     </div>
   </div>
 </div>
+</div>
+
+

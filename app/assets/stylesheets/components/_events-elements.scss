@@ -52,8 +52,11 @@
 
 
 .myevent-sec {
-  p {
-    // border: 1px solid #222222;
+  display: flex;
+  h6 {
+    border-left: 3px solid #222222;
+    padding-left: 8px;
+    font-weight: bold;
   }
 }
 

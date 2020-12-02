@@ -9,8 +9,13 @@ class User < ApplicationRecord
   has_many :karmapoints
   has_many :reviews
   has_many :participations
+
   has_many :joined_events, through: :participations, source: :event
   has_many :likes, dependent: :destroy
+
+  has_many :events, through: :participations
+
+
   validates :username, presence: true, uniqueness: true
   has_one_attached :photo
   has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
