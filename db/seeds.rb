@@ -2,10 +2,10 @@
 require 'open-uri'
 require 'nokogiri'
 
-
 Event.destroy_all
 Post.destroy_all
 User.destroy_all
+
 Product.delete_all
 Category.destroy_all
 Comment.destroy_all
@@ -24,10 +24,18 @@ html_doc = Nokogiri::HTML(html_file)
 html_doc.search(".product").each_with_index do |box, index|
   title =  box.search('h5').text
   desc =  box.search('p').text
+  price =  box.search('.price').text.strip
+  img = box.search('img').attribute('src').value
+  Product.create(title: title, description: desc, price: price, image: img)
+  puts "Created product #{index + 1}"
+
+  puts "Finish creating products"
+
+
 
   url_title = title.downcase.gsub(" ", "")
   url = "https://bosqueplants.com/en/plants/#{url_title}"
-  # p url_title
+ # p url_title
   html_file = open(url).read
   html_doc = Nokogiri::HTML(html_file)
   five_tr = html_doc.search("tr:nth-child(5)")

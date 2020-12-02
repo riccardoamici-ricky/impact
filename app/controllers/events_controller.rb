@@ -7,6 +7,11 @@ class EventsController < ApplicationController
   #   using: {
   #     tsearch: { prefix: true }
 
+  #   }
+  def my_events
+    @events = current_user.events
+  end
+
 
   def filter
     @my_events = current_user.events
@@ -49,9 +54,11 @@ class EventsController < ApplicationController
   end
 
   def create
+
     @event = Event.new(event_params)
     @event.user = current_user
     authorize @event
+
     if @event.save
       redirect_to @event, notice: 'create_event'
     else

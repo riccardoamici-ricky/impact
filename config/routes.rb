@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :likes
   end
+
   resources :events do
     resources :participations, only: [:create, :destroy]
     collection do
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
 
   get "my_events", to: "events#my_events"
   get "my_participations", to: "participations#my_participations"
+
   resources :categories, only: [:index, :show]
 
 
