@@ -39,7 +39,7 @@ html_doc.search(".product").each_with_index do |box, index|
   desc =  "#{box.search('p').text}. #{description} #{description_watering}"
   price =  box.search('.price').text.strip
   img = box.search('img').attribute('src').value
-  Product.create!(title: title, description: desc, price: price, url: url, image: img, category: Category.all.sample)
+  Product.create!(title: title, description: desc, price: price, url: url, image: img, category: Category.find_by(name:'Plants'))
   puts "Created product #{index + 1}"
 
   end
