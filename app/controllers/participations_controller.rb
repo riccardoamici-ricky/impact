@@ -21,7 +21,7 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
     if current_user.participations.includes(@participation)
       @participation.destroy
-    redirect_to @participation.event, notice: 'destroy_event'
+    redirect_to @participation.event, notice: 'destroy_participation'
     end
   end
 

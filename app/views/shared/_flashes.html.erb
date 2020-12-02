@@ -27,6 +27,15 @@
     </div>
 <% end %>
 
+<% if notice && notice == 'destroy_participation' %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>You will no longer attend this event!</strong> We will take care of informing the host.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
+
+
+
 
 
 
