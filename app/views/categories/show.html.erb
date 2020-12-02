@@ -17,7 +17,7 @@
           <img src= <%= product.image %> >
           <div class="card-header d-flex justify-content-between">
             <h4 class="header"> <%= product.title %> </h4>
-            <h4 class="card-pricing"> <%= product.price %> € </h4>
+            <h4 class="card-pricing"> <%= product.price %>€</h4>
           </div>
           <p class="card-description"><%= product.description[0...135] %>...</p>
           <div class="col-12 p-0 m-0 d-flex flex-grow">
@@ -34,7 +34,7 @@
       <li>
         <div>
             <%= link_to karmapoints_path do %>
-            Your karma: <%= current_user.karma_points %><i class="fas fa-dollar-sign"></i>
+            Your karma: <%= current_user.karma_points %><i class="fas fa-gem"></i>
             <% end %>
           </div>
       </li>

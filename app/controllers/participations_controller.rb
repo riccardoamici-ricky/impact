@@ -5,7 +5,6 @@ class ParticipationsController < ApplicationController
   end
 
   def create
-
     @participation = Participation.new
     @participation.user = current_user
     @event = Event.find(params[:event_id])
@@ -21,8 +20,7 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
     if current_user.participations.includes(@participation)
       @participation.destroy
-    redirect_to @participation.event, notice: 'destroy_event'
+      redirect_to @participation.event, notice: 'destroy_event'
     end
   end
-
 end
