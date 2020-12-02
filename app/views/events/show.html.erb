@@ -64,23 +64,16 @@
     </div>
 
     <div class="foot">
-
-
-        <% unless current_user.joined_events.include?(@event) %>
-            <%= simple_form_for [@event, @participation], method: :post do |f|  %>
-
-            <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
-            <% end %>
-
-
-          <% else %>
-              <div class="btn btn-flat event">JOINED</div>
-            </div>
-          <% end %>
+      <% unless current_user.joined_events.include?(@event) %>
+        <%= simple_form_for [@event, @participation], method: :post do |f|  %>
+        <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
+        <% end %>
+      <% else %>
+        <div class="btn btn-flat event">JOINED</div>
+        <% end %>
+    </div>
   </div>
     <div class="foot">
-
-
     </div>
 </div>
 
