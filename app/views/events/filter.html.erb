@@ -1,84 +1,85 @@
 <div class="event-container">
   <h2>My Events</h2>
-
-
   <% if @all_events.any? %>
     <p>Hi! You have <%= @all_events.count %> upcoming events</p>
   <% else %>
       <p> You have no events to display 😢 </p>
-<% end %>
-
-
-
+  <% end %>
   <div>
-  <% if @my_events.any? %>
-  <p> You will host: </p>
-    <ul>
-      <% @my_events.each do |event| %>
-     <li> <div class="card-trip">
-          <% if event.photo.attached? %>
-          <%= cl_image_tag event.photo.key, crop: :fill %>
-          <% end %>
-          <div class="card-trip-pricing">
-            <h2 class="main-title"><%= link_to event.title, event_path(event)%></h2>
-            <p><%=event.category%></p>
-            <p><%=event.description%></p>
-            <p><%=event.participations.count%>    <i class="fas fa-user-check"></i></p>
-          </div>
-          <h3 class="card-trip-info"><div id="date"><%= (event.start_time).to_s(:short) %></div><div id="neighbourhood"><%= event.neighbourhood %></div></h3>
-        </div>
-          <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <button type="button" class="btn btn-primary">cancel this event</button>
-          <% end %>
-      </li>
-    <% end %>
-    </ul>
+    <% if @my_events.any? %>
+      <p> You will host: </p>
+      <ul>
+        <% @my_events.each do |event| %>
+          <li>
+            <div class="card-trip">
+              <% if event.photo.attached? %>
+                <%= cl_image_tag event.photo.key, crop: :fill %>
+              <% end %>
+              <div class="card-trip-pricing">
+                <h2 class="main-title">
+                  <%= link_to event.title, event_path(event)%>
+                </h2>
+                <p><%=event.category%></p>
+                <p><%=event.description%></p>
+                <p><%=event.participations.count%> <i class="fas fa-user-check"></i></p>
+              </div>
+              <h3 class="card-trip-info">
+                <div id="date">
+                  <%= (event.start_time).to_s(:short) %>
+                </div>
+                <div id="neighbourhood">
+                  <%= event.neighbourhood %>
+                </div>
+              </h3>
+            </div>
+            <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <button type="button" class="btn btn-primary">cancel this event</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
 
     <% if @joined_events.any? %>
-  <p> You will join </p>
-    <ul>
-      <% @joined_events.each do |event| %>
-      <li>
-        <div class="card-trip">
-          <% if event.photo.attached? %>
-          <%= cl_image_tag event.photo.key, crop: :fill %>
-          <% end %>
-          <div class="card-trip-pricing">
-            <h2 class="main-title"><%= link_to event.title, event_path(event)%></h2>
-            <p><%=event.category%></p>
-            <p><%=event.description%></p>
-            <p><%=event.participations.count%>    <i class="fas fa-user-check"></i></p>
-          </div>
-          <h3 class="card-trip-info"><div id="date"><%= (event.start_time).to_s(:short) %></div><div id="neighbourhood"><%= event.neighbourhood %></div></h3>
-        </div>
-          <%= link_to event_participation_path(event, event.participations.find_by(user: current_user)), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <button type="button" class="btn btn-primary">delete participation</button>
-          <% end %>
-      </li>
+      <p> You will join </p>
+      <ul>
+        <% @joined_events.each do |event| %>
+          <li>
+            <div class="card-trip">
+              <% if event.photo.attached? %>
+                <%= cl_image_tag event.photo.key, crop: :fill %>
+              <% end %>
+              <div class="card-trip-pricing">
+                <h2 class="main-title">
+                  <%= link_to event.title, event_path(event)%>
+                </h2>
+                <p><%=event.category%></p>
+                <p><%=event.description%></p>
+                <p><%=event.participations.count%> <i class="fas fa-user-check"></i></p>
+              </div>
+              <h3 class="card-trip-info">
+                <div id="date">
+                  <%= (event.start_time).to_s(:short) %>
+                </div>
+                <div id="neighbourhood">
+                  <%= event.neighbourhood %>
+                </div>
+              </h3>
+            </div>
+            <%= link_to event_participation_path(event, event.participations.find_by(user: current_user)), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <button type="button" class="btn btn-primary">delete participation</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
-
    </div>
+   <a href="/events" class="card-category-event">Find an event</a>
+   <a href="/events/new" class="card-category-event">Create an event</a>
 
+   <a href="/karmapoints" class="card-category-event">Karmapoints</a>
 
+   <a href="/categories" class="card-category-event">Marketplace</a>
 
-
-
-
-
-
-    <a href="/events" class="card-category-event">Find an event</a>
-    <a href="/events/new" class="card-category-event">Create an event</a>
-
-    <a href="/karmapoints" class="card-category-event">Karmapoints</a>
-
-    <a href="/categories" class="card-category-event">Marketplace</a>
-
-    <a href="posts" class="card-category-event">Get inspired</a>
-
-
-
-
+   <a href="posts" class="card-category-event">Get inspired</a>
 </div>
