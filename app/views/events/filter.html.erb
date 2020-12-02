@@ -2,8 +2,6 @@
   <div class="event-card"></div>
 
   <h2>My Events</h2>
-
-
   <% if @all_events.any? %>
     <p>Hi! You have <%= @all_events.count %> upcoming events.</p>
   <% else %>
@@ -49,7 +47,6 @@
   </div>
 </div>
 </div>
-
 <% if @joined_events.any? %>
   <div class="myevent-sec">
     <p style="margin-bottom: 0px"> You will join: </p>
@@ -81,5 +78,3 @@
   <% end %>
   </div>
 </div>
-
-
