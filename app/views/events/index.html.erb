@@ -23,7 +23,7 @@
 
  <div class="card-container">
    <div class="row">
-    <% @events.each do |event| %>
+    <% @events.order("created_at desc").each do |event| %>
         <div class="col-12 p-2">
         <div class="card-product m-2">
         <% if event.photo.attached? %>
@@ -45,32 +45,4 @@
       </div>
     </div>
 
- <!--  <div class="index mt-2">
-    <% @events.each do |event| %>
-    <div class="card-event-index">
-      <% if event.photo.attached? %>
-        <%= cl_image_tag event.photo.key, crop: :fill %>
-        <% end %>
-      <div class="card-trip-pricing">
-        <div class="card-header-event d-flex justify-content-between">
-          <h2 class="main-title"><%= event.title %></h2>
-          <p class="card-event-info">
-          <div id="date"><i class="far fa-calendar-alt"></i>
-            <%= (event.start_time).to_s(:short) %>
-          </div>
-        </div>
 
-        <ul class="list-inline">
-          <li class="list-inline-item"><p class="neighbourhood"><%= event.neighbourhood %></p></li>
-          <li class="list-inline-item"><p class="event-category"><%=event.category%></p></li>
-        </ul>
-        <p class="event-desc"><%=event.description%></p>
-      </div>
-
-      <div class="col-12 p-0 m-0 d-flex flex-grow">
-        <%= link_to "EVENT DETAILS", event_path(event), class: "btn-event col-12 text-center m-0" %>
-      </div>
-    <% end %>
-    </div>
-  </div> -->
-<!-- </div> -->
