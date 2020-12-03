@@ -1,5 +1,6 @@
 .comments{
   background-color: $soft-gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid $very-light-gray;
   border-radius: 5px;
   padding: 10px;
@@ -23,7 +24,7 @@
 //   visibility: visible;
 // }
 .fa-trash{
-  color: $light-orange;
+  color: $post;
   padding-left: 10px;
 }
 ul{

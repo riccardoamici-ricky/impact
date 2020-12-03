@@ -1,16 +1,25 @@
 .post{
   margin-top: 25px !important;
+  margin-bottom: 5px !important;
   background-color: $soft-gray;
   border: 1px solid $very-light-gray;
-  border-bottom: 15px solid $light-orange;
-  padding: 20px;
+  // border-bottom: 15px solid $post;
+  padding: 10px;
   margin: auto;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.posts {
+
+  background: transparent;
+}
+
 .title-post{
   font-size: 19px;
   // background-color: $rosee;
   margin-left: 4px;
+      // margin-top: 18px;
   // border: 1px solid $very-light-gray;
   // a{
   //   color: $orange;
@@ -39,7 +48,7 @@
 }
 .striscia{
   opacity: 0.6;
-  background-color: $orange;
+  background-color: $post;
   bottom: 9%;
   content: "";
   height: 3px;
@@ -50,9 +59,17 @@
 .edit{
   padding-left: 10px;
   a{
-    color: $orange;
+    color: $post;
   }
 }
 .heart{
   padding-left: 10px;
+}
+
+.tab-content {
+  margin-top: 18px;
+}
+
+.single-nav-item {
+  border: none;
 }

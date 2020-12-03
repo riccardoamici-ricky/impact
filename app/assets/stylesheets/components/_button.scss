@@ -98,11 +98,35 @@ a {
 .btn-comment {
   background-color: $soft-gray;
   font-weight: bold;
-  color: $light-orange;
+  color: $post;
   padding: 5px 15px;
   border-radius: 50px;
   border: 2px solid;
-  border-color: $light-orange;
+  border-color: $post;
+}
+
+.follow {
+  text-align: right;
+  top: -8px;
+  position: relative;
+  width: 131px;
+  left: 200px;
+  a {
+    color: $post !important;
+    text-decoration: none;
+  }
+}
+
+.unfollow {
+  text-align: right;
+  top: -8px;
+  position: relative;
+  width: 108px;
+  left: 222px;
+  a {
+    color: $post !important;
+    text-decoration: none;
+  }
 }
 
 .btn-map {
