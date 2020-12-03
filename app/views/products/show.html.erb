@@ -34,7 +34,7 @@
       <i class="fas fa-angle-double-right"></i>
       <% end %>
     </div>
-    <div>
+    <div class="button-productshow">
       <% if Rails.env.development? %>
         <%= link_to "GET YOUR DISCOUNT CODE", @product.url, class: "btn btn-flat small sweetalert karmajs", data: {
          url: @product.url,
