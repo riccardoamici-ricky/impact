@@ -1,15 +1,41 @@
-<div class="post">
-  <div class="title-post">
-    <% if post.title.present? %>
-      <h1 class="title-post"><%= post.title.upcase %></h1>
-    <% end %>
+
+
+ <div class="post">
+   <%= link_to user_path(post.user)  do %>
+   <div class="userdetails d-flex">
+
+     <div class="comment-photo">
+       <% if post.user.photo.attached? %>
+
+         <%= cl_image_tag post.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
+       <% end %>
+     </div>
+     <div class="username">
+       <%= post.user.username %>
+     </div>
+   </div>
+   <% end %>
+   <div class="category">
+       <%= post.category.upcase %>
+     <div class="striscia">
+     </div>
+   </div>
+   <% if post.title.present? %>
+     <div class="title-post">
+       <h1 class="title-post"><%= post.title.upcase %></h1>
+     </div>
+   <% end %>
+ <!--   <div class="date-post">
+     <%= post.date %>
+   </div> -->
+   <div class="post-photo">
+     <% if post.photo.attached? %>
+       <%= cl_image_tag post.photo.key, crop: :fill, class: "photo-of-the-post" %>
+     <% end %>
+   </div>
+   <% if post.content.present? %>
+     <div class="post-content">
+       <%= post.content %>
+     </div>
+   <% end %>
   </div>
-  <% if post.title.present? %>
-    <div class="title-post">
-      <h1 class="title-post"><%= post.title.upcase %></h1>
-    </div>
-  <% end %>
-  <div class="post-content">
-    <%= post.content %>
-  </div>
-</div>
