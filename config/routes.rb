@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   end
 
+
   get "my_events", to: "events#my_events"
   get "my_participations", to: "participations#my_participations"
   resources :categories, only: [:index, :show]
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
   get "/dashboard_admin", to: "pages#dashboard_admin"
   get "/profile", to: "pages#profile"
   get "/howwerate", to: "pages#rating"
+  get "/choose_type_of_post", to: "pages#choose_type_of_post"
+  get "/form_photo", to: "posts#form_photo", as: "form_photo"
   get "/buy", to: "products#buy", as: :buy
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

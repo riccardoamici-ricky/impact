@@ -1,7 +1,7 @@
 <div class="navbar-posts">
   <ul>
     <li>
-      <%= link_to new_post_path, method: :get do %>
+      <%= link_to choose_type_of_post_path, method: :get do %>
         <i class="fas fa-pencil-alt" id="plus"></i>
       <% end %>
     </li>
@@ -29,12 +29,19 @@
           <div class="striscia">
           </div>
         </div>
-        <div class="title-post">
-          <h1 class="title-post"><%= post.title.upcase %></h1>
-        </div>
+        <% if post.title.present? %>
+          <div class="title-post">
+            <h1 class="title-post"><%= post.title.upcase %></h1>
+          </div>
+        <% end %>
       <!--   <div class="date-post">
           <%= post.date %>
         </div> -->
+        <div class="post-photo">
+          <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, crop: :fill, class: "photo-of-the-post" %>
+          <% end %>
+        </div>
         <div class="post-content">
           <%= post.content %>
         </div>
