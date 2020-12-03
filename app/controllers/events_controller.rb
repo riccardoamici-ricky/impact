@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-     @user = current_user
+    @user = current_user
     @event = Event.find(params[:id])
 
     @event.user = @user
