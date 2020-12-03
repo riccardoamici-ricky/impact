@@ -5,6 +5,6 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
 
   def self.categories
-    ["Post", "Quote", "Recipe", "Tutorial", "Video"]
+    ["Photo", "Post", "Quote", "Recipe", "Tutorial", "Video"]
   end
 end
