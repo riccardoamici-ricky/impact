@@ -51,7 +51,7 @@
 
     <div class="facts-and-map">
       <div class="facts">
-      <p>Facts:</p>
+      <h6>Facts:</h6>
       <p>"<%= facts.sample  %>"</p>
       </div>
       <div class="showmap">
@@ -72,7 +72,7 @@
         <% end %>
       <% else %>
         <% if current_user.joined_events.include?(@event) %>
-          <%= link_to @participation.event, method: :delete, data: { confirm: "Are you sure?" } do %>
+          <%= link_to participation_path(@participation), method: :delete, data: { confirm: "Are you sure?" } do %>
             <button type="button" class="btn btn-flat joined">UNJOIN</button>
           <% end %>
 

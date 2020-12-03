@@ -31,6 +31,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @participation = Participation.new
+    @participation = @event.participations.find_by(user_id: current_user.id) if @event.participations.find_by(user_id: current_user.id).present?
     authorize @event
     @address = @event.address
     @events = Event.near(@address, 1)

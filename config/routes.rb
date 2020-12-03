@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   end
   resources :events do
-    resources :participations, only: [:create, :destroy] do
+    resources :participations, only: [:create] do
       post :check_in
     end
 
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   end
 
+  resources :participations, only: :destroy
 
   get "my_events", to: "events#my_events"
   get "my_participations", to: "participations#my_participations"
