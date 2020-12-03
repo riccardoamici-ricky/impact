@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   get "/howwerate", to: "pages#rating"
   get "/choose_type_of_post", to: "pages#choose_type_of_post"
   get "/form_photo", to: "posts#form_photo", as: "form_photo"
+  get "/form_quote", to: "posts#form_quote", as: "form_quote"
+  get "/form_post", to: "posts#form_post", as: "form_post"
   get "/buy", to: "products#buy", as: :buy
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

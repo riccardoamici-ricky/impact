@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Create a new post</h1>
+  <%= simple_form_for [@user, @post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content, :as => :text, :input_html => { 'rows' => 10} %>
+    <h6>Category</h6><%= f.select :category, Post.categories, include_blank: true %><br><br>
+    <%= f.submit "Submit new post", class: "btn btn-comment" %>
+  <% end %>
+</div>

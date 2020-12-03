@@ -47,9 +47,11 @@
             <%= cl_image_tag post.photo.key, crop: :fill, class: "photo-of-the-post" %>
           <% end %>
         </div>
-        <div class="post-content">
-          <%= post.content %>
-        </div>
+        <% if post.content.present? %>
+          <div class="post-content">
+            <%= post.content %>
+          </div>
+        <% end %>
        <% if policy(post).update? %>
         <div class="edit">
           <%=  link_to "Edit Post", edit_post_path(post) %> <%= link_to post_path(post),
@@ -104,10 +106,11 @@
           <!-- <div id="comment-modal">
             <a rel="nofollow" data-method="delete" id="modal-delete">DELETE COMMENT</a>
           </div> -->
-          <%= simple_form_for [ post, @comment ], remote: true do |f| %>
+          <%= simple_form_for [ post, @comment ], remote: true  do |f| %>
             <%= f.input :content, label: false, placeholder: 'Add a comment' %>
-            <%= f.submit "Comment", class: "btn btn-comment" %>
+            <%= f.submit "Comment", class: "btn btn-comment", id: "post-#{post.id}" %>
           <% end %>
+
       </div>
     <% end %>
     <br><br>
