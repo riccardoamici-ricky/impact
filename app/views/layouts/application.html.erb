@@ -2,7 +2,8 @@
 <html>
   <head>
     <title><%= meta_title %></title>
-    <link rel="shortcut icon" type="image/png" href="app/assets/images/favicon.ico">
+    <%= favicon_link_tag "impactfav.png" %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="description" content="<%= meta_description %>">
@@ -15,7 +16,7 @@
 
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    
+
   </head>
 
   <body>

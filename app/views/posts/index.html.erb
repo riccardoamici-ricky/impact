@@ -14,9 +14,12 @@
   <div class="posts">
     <% @posts.each do |post| %>
       <div class="post">
+        <%= link_to user_path(post.user)  do %>
         <div class="userdetails d-flex">
+
           <div class="comment-photo">
             <% if post.user.photo.attached? %>
+
               <%= cl_image_tag post.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
             <% end %>
           </div>
@@ -24,6 +27,7 @@
             <%= post.user.username %>
           </div>
         </div>
+        <% end %>
         <div class="category">
             <%= post.category.upcase %>
           <div class="striscia">
@@ -60,8 +64,11 @@
       <div class="comments">
         <ul>
           <% post.comments.each do |comment| %>
+
             <li class="comment-item d-flex">
+
               <div class="comment-photo">
+                <%= link_to user_path(comment.user) do %>
                 <% if comment.user.photo.attached? %>
                   <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
                 <% end %>
@@ -69,9 +76,11 @@
               <div class="username">
                 <%= comment.user.username %>
               </div>
+              <% end %>
               <div class="content-comment">
                 <%= comment.content %>
               </div>
+
               <% if policy(comment).update? %>
                 <div>
                   <%= link_to post_comment_path(post.id, comment),
