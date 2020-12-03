@@ -17,8 +17,10 @@
 
 
     <div class="photo">
-      <div class="event-photo"><%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
+      <% if @event.photo.attached? %>
+        <div class="event-photo"><%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
       <div class="description">
         <p class="event-description"><%= @event.description %></p>
       </div>
@@ -64,16 +66,22 @@
     </div>
 
     <div class="foot">
-      <% unless current_user.joined_events.include?(@event) %>
-        <%= simple_form_for [@event, @participation], method: :post do |f|  %>
-        <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
+      <% if @event.user == current_user %>
+        <%= link_to dashboard_admin_path(event: @event) do %>
+          <button type="button" class="btn btn-flat joined">MANAGE EVENT</button>
         <% end %>
       <% else %>
-        <div class="btn btn-flat event">JOINED</div>
+        <% if current_user.joined_events.include?(@event) %>
+          <%= link_to @participation.event, method: :delete, data: { confirm: "Are you sure?" } do %>
+            <button type="button" class="btn btn-flat joined">UNJOIN</button>
+          <% end %>
+
+        <% else %>
+          <%= simple_form_for [@event, @participation], method: :post do |f|  %>
+            <%= f.submit "JOIN", class: "btn btn-flat event", notice: 'join_event' %>
+          <% end %>
         <% end %>
-    </div>
-  </div>
-    <div class="foot">
+      <% end %>
     </div>
 </div>
 

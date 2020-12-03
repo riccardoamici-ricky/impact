@@ -67,6 +67,12 @@
   padding: 20px 30px !important;
   margin-top: 12px;
 }
+.joined{
+  background-color: $background;
+  border: 1px solid $impact;
+  color: $impact;
+  border-radius: 5px;
+}
 .btn-comment {
   background-color: $soft-gray;
   font-weight: bold;
