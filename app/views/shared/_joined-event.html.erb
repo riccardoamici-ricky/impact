@@ -1,17 +1,20 @@
-<li>
-  <div class="card-trip">
-    <% if event.photo.attached? %>
-    <%= cl_image_tag event.photo.key, crop: :fill %>
-    <% end %>
-    <div class="card-trip-pricing">
-      <h2 class="main-title"><%= link_to event.title, event_path(event)%></h2>
-      <p><%=event.category%></p>
-      <p><%=event.description%></p>
-      <p><%=event.participations.count%>    <i class="fas fa-user-check"></i></p>
+
+<div class="card-container">
+  <div class="row">
+      <div class="col-12 p-2">
+        <div class="card-product m-2">
+          <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, crop: :fill %>
+          <% end %>
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="myevent-title"><%= link_to event.title, event_path(event)%></h2>
+              <div id="date"><i class="far fa-calendar-alt"></i>
+                <%= (event.start_time).to_s(:short) %> <br>
+                <%= event.neighbourhood %>
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
-    <h3 class="card-trip-info"><div id="date"><%= (event.start_time).to_s(:short) %></div><div id="neighbourhood"><%= event.neighbourhood %></div></h3>
   </div>
-    <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <button type="button" class="btn btn-primary">delete</button>
-    <% end %>
-</li>
+
