@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     resources :likes
   end
   resources :events do
-    resources :participations, only: [:create, :destroy]
+    resources :participations, only: [:create, :destroy] do
+      post :check_in
+    end
+
     collection do
       get :filter
     end
@@ -25,7 +28,7 @@ Rails.application.routes.draw do
   get "my_participations", to: "participations#my_participations"
   resources :categories, only: [:index, :show]
 
-
+  get "/dashboard_admin", to: "pages#dashboard_admin"
   get "/profile", to: "pages#profile"
   get "/howwerate", to: "pages#rating"
   get "/buy", to: "products#buy", as: :buy

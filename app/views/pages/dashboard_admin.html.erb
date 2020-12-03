@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Manage your booking</h1>
+  <% @event.participations.each do |participation| %>
+    <li class="comment-item d-flex">
+      <div class="boxes">
+        <% if participation.checked_in == true %>
+          <%= link_to event_participation_check_in_path(@event, participation), method: :post do%>
+          <i class="fas fa-check-square"></i>
+          <% end %>
+        <% else %>
+          <%= link_to event_participation_check_in_path(@event, participation), method: :post do%>
+            <i class="far fa-check-square"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="comment-photo">
+        <% if participation.user.photo.attached? %>
+          <%= cl_image_tag participation.user.photo.key, crop: :fill, class: "avatar-dashboard avatar-comment" %>
+        <% end %>
+      </div>
+      <div class="username-dashboard">
+        <%= participation.user.username %>
+    </li>
+  <% end %>
+</div>
