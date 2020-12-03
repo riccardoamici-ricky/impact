@@ -14,7 +14,6 @@
   font-family: "montserrat";
   font-size: 15px;
   color: black;
-  margin-left: 5px;
   margin-bottom: 8px;
 }
 
@@ -52,8 +51,9 @@
 
 
 .myevent-sec {
-  p {
-    // border: 1px solid #222222;
+  h6 {
+    border-left: 3px solid #222222;
+    padding-left: 5px;
   }
 }
 

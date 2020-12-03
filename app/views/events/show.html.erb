@@ -51,8 +51,8 @@
 
     <div class="facts-and-map">
       <div class="facts">
-      <p class="event-facts"> Facts</p>
-      <p><%= facts.sample  %>  </p>
+      <p>Facts:</p>
+      <p>"<%= facts.sample  %>"</p>
       </div>
       <div class="showmap">
         <a class="btn btn-map-show" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"  aria-controls="collapseExample">Show map <i class="fas fa-angle-double-right"></i></a>
@@ -68,7 +68,7 @@
     <div class="foot">
       <% if @event.user == current_user %>
         <%= link_to dashboard_admin_path(event: @event) do %>
-          <button type="button" class="btn btn-flat joined">MANAGE EVENT</button>
+          <button type="button" class="btn btn-flat event">MANAGE EVENT</button>
         <% end %>
       <% else %>
         <% if current_user.joined_events.include?(@event) %>

@@ -8,15 +8,19 @@
   </ul>
 </div>
 <div class="container">
+  <div class="event-card"></div>
   <div class="daily-quote">
     <i class="fas fa-quote-left"></i><br><h1 class="quote">We can't control everything that happens, but we can change our experience of those things</h1><i class="fas fa-quote-right"></i>
   </div>
   <div class="posts">
-    <% @posts.each do |post| %>
+    <% @posts.order("created_at desc").each do |post| %>
       <div class="post">
+        <%= link_to user_path(post.user)  do %>
         <div class="userdetails d-flex">
+
           <div class="comment-photo">
             <% if post.user.photo.attached? %>
+
               <%= cl_image_tag post.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
             <% end %>
           </div>
@@ -24,6 +28,7 @@
             <%= post.user.username %>
           </div>
         </div>
+        <% end %>
         <div class="category">
             <%= post.category.upcase %>
           <div class="striscia">
@@ -56,9 +61,9 @@
         <% end %>
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
         <% if pre_like %>
-          <%= link_to '🧡', post_like_path(post, pre_like), class: "heart", method: :delete %>
+          <%= link_to '♥️', post_like_path(post, pre_like), class: "heart", method: :delete %>
         <% else %>
-          <%= link_to '🧡', post_likes_path(post), class: "heart", method: :post %>
+          <%= link_to '♥️', post_likes_path(post), class: "heart", method: :post %>
         <% end %>
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
           💬
@@ -67,8 +72,11 @@
       <div class="comments">
         <ul>
           <% post.comments.each do |comment| %>
+
             <li class="comment-item d-flex">
+
               <div class="comment-photo">
+                <%= link_to user_path(comment.user) do %>
                 <% if comment.user.photo.attached? %>
                   <%= cl_image_tag comment.user.photo.key, crop: :fill, class: "avatar avatar-comment" %>
                 <% end %>
@@ -76,9 +84,11 @@
               <div class="username">
                 <%= comment.user.username %>
               </div>
+              <% end %>
               <div class="content-comment">
                 <%= comment.content %>
               </div>
+
               <% if policy(comment).update? %>
                 <div>
                   <%= link_to post_comment_path(post.id, comment),
@@ -100,9 +110,10 @@
           <% end %>
       </div>
     <% end %>
+    <br><br>
   </div>
-
 </div>
+  <br><br>
 
 
 <div class="modal-wrapper">

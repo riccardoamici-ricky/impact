@@ -1,60 +1,59 @@
-<div class="container">
-  <div class="name">
-    <strong><%= @user.username.upcase %>'S IMPACT</strong>
+ <div class="event-container">
+    <div class="event-card"></div>
   </div>
-</div>
-<div class="bg-photo">
-  <img src="https://i.ibb.co/djpMs9g/showus.png" class="user-bg">
-</div>
-<div class="container">
-  <div class="user-details">
-    <div class="user-photo">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, crop: :fill, class: "avatar-myprofile" %>
-      <% end %>
-    </div>
-    <div class="user-name">
-      <strong><%= @user.username %></strong><br>
-      Joined <%= @user.created_at.to_date.to_formatted_s(:long) %><br>
-      <strong>Followers:</strong> <%= @user.followers.count %> | <strong>Following:</strong> <%= @user.followees.count %>
-    </div>
+  <div class="container">
   </div>
-  <section id="follow-unfollow">
-    <% if current_user.followees.include?(@user) %>
-        <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
-    <% else %>
-        <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
-    <% end%>
-    <br>
-  </section>
-  <div class="tabs">
-    <nav class="tabs-profile">
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link single-nav-item" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Home</a>
-        <a class="nav-item nav-link active single-nav-item" id="nav-impact-tab" data-toggle="tab" href="#nav-impact" role="tab" aria-controls="nav-impact" aria-selected="true">Impact</a>
-        <a class="nav-item nav-link single-nav-item" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-      </div>
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <ul>
-          <% @user.joined_events.each do |event| %>
-            <%= render partial: "shared/joined-event", locals: { event: event } %>
-          <% end %>
-        </ul>
-      </div>
-      <div class="tab-pane fade show active" id="nav-impact" role="tabpanel" aria-labelledby="nav-impact-tab">
-         <% @user.posts.each do |post| %>
-            <%= render partial: "shared/post-in-the-show", locals: { post: post } %>
-
-       <% end %>
-      </div>
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <% @likes.to_a.each do |like| %>
-          <%= render partial: "shared/post-in-the-show", locals: { post: like.post } %>
+  <div class="bg-photo">
+    <img src="https://i.ibb.co/djpMs9g/showus.png" class="user-bg">
+  </div>
+  <div class="event-container">
+    <div class="user-details">
+      <div class="user-photo">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, crop: :fill, class: "avatar-myprofile" %>
         <% end %>
       </div>
+      <div class="user-name">
+        <strong><%= @user.username %></strong><br>
+        Joined <%= @user.created_at.to_date.to_formatted_s(:long) %><br>
+        <strong>Followers:</strong> <%= @user.followers.count %> | <strong>Following:</strong> <%= @user.followees.count %>
+      </div>
     </div>
+    <section id="follow-unfollow">
+      <% if current_user.followees.include?(@user) %>
+          <h5 class="btn-comment follow"><%= link_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+      <% else %>
+          <h5 class="btn-comment unfollow"><%= link_to "Follow", follow_user_path, method: "POST"  %></h5>
+      <% end%>
+      <br>
+    </section>
+    <div class="tabs">
+      <nav class="tabs-profile">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link single-nav-item" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Events</a>
+          <a class="nav-item nav-link active single-nav-item" id="nav-impact-tab" data-toggle="tab" href="#nav-impact" role="tab" aria-controls="nav-impact" aria-selected="true">Posts</a>
+          <a class="nav-item nav-link single-nav-item" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Likes</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <% @user.joined_events.order("created_at desc").each do |event| %>
+              <%= render partial: "shared/joined-event", locals: { event: event } %>
+            <% end %>
+        </div>
+        <div class="tab-pane fade show active" id="nav-impact" role="tabpanel" aria-labelledby="nav-impact-tab">
+           <% @user.posts.order("created_at desc").each do |post| %>
+              <%= render partial: "shared/post-in-the-show", locals: { post: post } %>
+
+         <% end %>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <% @likes.to_a.each do |like| %>
+            <%= render partial: "shared/post-in-the-show", locals: { post: like.post } %>
+          <% end %>
+        </div>
+      </div>
+
   </div>
 </div>
 
@@ -64,7 +63,7 @@
 
 
 
-  <% @user.followers.each do |follower| %>
-    <%= cl_image_tag follower.photo.key, crop: :fill, class: "avatar"  %>
-    <%= follower.username %>
-  <% end %>
+      <% @user.followers.each do |follower| %>
+        <%= cl_image_tag follower.photo.key, crop: :fill, class: "avatar"  %>
+        <%= follower.username %>
+      <% end %>

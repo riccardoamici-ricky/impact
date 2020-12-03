@@ -1,21 +1,21 @@
 .daily-quote{
-  margin-top: 20px !important;
-  padding: 40px;
+  margin-top: 10px !important;
+  padding: 20 40px;
   width: 80%;
-  background-color: $rosee;
+  // background-color: $rosee;
   margin: auto;
-  // border-top: 15px solid $orange;
-  border-bottom: 15px solid $light-orange;
+  // border-top: 15px solid $post;
+  // border-bottom: 1px solid $post;
 }
 .quote{
   font-size: 19px;
   text-align: center;
 }
 .fa-quote-right{
-  margin-left: 193px;
-  color: $orange;
+  margin-left: 268px;
+  color: $post;
 }
 .fa-quote-left{
   margin-left: -15px;
-  color: $orange;
+  color: $post;
 }

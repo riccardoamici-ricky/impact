@@ -44,13 +44,13 @@
 
   .btn-product {
       background-color: $marketplace;
-      color: white;
+      color: white !important;
       border-radius: 0 0 4px 4px;
       font-family: "montserrat";
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 4px;
       padding: 16px 10px !important;
-      font-size: 13px;
+      font-size: 15px;
       margin: 0;
       position: relative;
       bottom: 0;
