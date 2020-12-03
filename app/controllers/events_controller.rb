@@ -54,7 +54,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save
-      redirect_to @event, notice: 'create_event'
+      redirect_to event_path(@event), notice: 'create_event'
     else
       render :new
     end
@@ -72,14 +72,14 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.update(event_params)
-    redirect_to @event, notice: 'update_event'
+    redirect_to event_path(@event), notice: 'update_event'
   end
 
   def destroy
     @event = Event.find(params[:id])
     authorize @event
     @event.destroy
-    redirect_to @event, notice: 'destroy_event'
+    redirect_to events_path, notice: 'destroy_event'
   end
 
   private
