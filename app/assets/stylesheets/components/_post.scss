@@ -55,6 +55,7 @@
   left: 0;
   position: absolute;
   width: 100%;
+  z-index: 0;
 }
 .edit{
   padding-left: 10px;
@@ -65,6 +66,10 @@
 .heart{
   padding-left: 10px;
 }
+
+.photo-of-the-post{
+  width: 100%;
+
 
 .tab-content {
   margin-top: 18px;
