@@ -1,10 +1,10 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://www.makeanimpact.today" }
+  config.action_mailer.default_url_options = { host: "http://www.makeyourimpact.today" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_controller.default_url_options = {:host => "www.makeanimpact.today"}
+  config.action_controller.default_url_options = {:host => "www.makeyourimpact.today"}
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
