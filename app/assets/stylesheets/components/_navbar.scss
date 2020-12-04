@@ -20,8 +20,10 @@
   border: none;
   outline: 0px dotted !important;
   outline: 0px auto -webkit-focus-ring-color !important;
-  &:focus {
+  &:focus,
+  &:active {
     outline: none !important;
+    border-color: $background !important;
   }
 }
 
