@@ -20,8 +20,16 @@
   border: none;
   outline: 0px dotted !important;
   outline: 0px auto -webkit-focus-ring-color !important;
-  &:focus {
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none !important;
+  border-color: $background !important;
+  &:focus,
+  &:active {
     outline: none !important;
+    border-color: $background !important;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
 }
 
